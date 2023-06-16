@@ -1,0 +1,5 @@
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/gary_mccord/golfer_rh.club_flex.unmarked_ball.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/gary_mccord/golfer.club.ball.bdf
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/gary_mccord/golfer_rh.club_flex.unmarked_ball.sch
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/gary_mccord/golfer_rh.club_flex.unmarked_ball.lmt
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/gary_mccord/swing_004_rttrack_params.dat

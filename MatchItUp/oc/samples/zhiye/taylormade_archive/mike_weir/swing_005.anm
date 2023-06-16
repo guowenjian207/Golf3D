@@ -1,0 +1,12 @@
+Bio Animation File
+v1.00
+MODEL: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_001.mdl
+MAPPING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_001.dof
+MOTION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_005.var
+SCALING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_001.scl
+LAUNCH_MONITOR_DATA: none
+BALL_POSITION_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_005_ball_position.dat
+BALL_IMPACT_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_005.ball_impact_data
+CLUB_RECOMMENDATION_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_005.club_recom_measurements
+VARIABLE_DESCRIPTORS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_001.vdf
+EXTERNAL_SYSVARS: BODY=ball ^ SYSVARS=(XT,YT,ZT) ^ SOURCE_IS_FILE=$BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_005_ball_position.dat

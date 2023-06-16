@@ -1,0 +1,24 @@
+{
+  "Outputs" : {
+    "displacementBwd" : {
+      "MLFeatureShortDescription" : "A multidimensional array that stores the displacement vector from each joint to its parent."
+    },
+    "heatmap" : {
+      "MLFeatureShortDescription" : "A multidimensional array that stores the confidence for each joint."
+    },
+    "displacementFwd" : {
+      "MLFeatureShortDescription" : "A multidimensional array that stores the displacement vector from each parent joint to one of its children."
+    },
+    "offsets" : {
+      "MLFeatureShortDescription" : "A multidimensional array that stores an offset for each joint."
+    }
+  },
+  "Inputs" : {
+    "image" : {
+      "MLFeatureShortDescription" : "RGB Image"
+    }
+  },
+  "TrainingInputs" : {
+
+  }
+}

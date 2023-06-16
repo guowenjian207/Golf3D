@@ -1,0 +1,5 @@
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/sergio_garcia/golfer_rh.club_flex.unmarked_ball.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/sergio_garcia/golfer.club.ball.bdf
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/sergio_garcia/golfer_rh.club_flex.unmarked_ball.sch
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/sergio_garcia/golfer_rh.club_flex.unmarked_ball.lmt
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/sergio_garcia/swing_005_FB_540PMK_SFlexSTD_RIGHT_FLEX_rttrack_params.dat

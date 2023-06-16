@@ -1,0 +1,7 @@
+Bio Animation File
+v1.00
+MODEL: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.mdl
+MAPPING: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.dof
+MOTION: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.var
+SCALING: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.scl
+BALL_POSITION_DATA: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001_ball_position.dat

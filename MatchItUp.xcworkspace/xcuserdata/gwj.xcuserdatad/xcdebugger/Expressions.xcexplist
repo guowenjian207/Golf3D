@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[SpecificationViewController initView]:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "album.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ModelPlayController glkView:drawInRect:]:ModelPlayController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController addSpectificationToolWithTool:andIndex:]:SpecificationViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AlbumViewController outletConfig]:AlbumViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[GlobalVar sharedInstance].kTabbarH">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VideoAnalysisViewController collectionView:didSelectItemAtIndexPath:]:VideoAnalysisViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController headLine]:SpecificationViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__36-[CoreDataManager addSpecification:]_block_invoke_2:CoreDataManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController setupVertexData]:SpecificationViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ModelPlayController addBackground]:ModelPlayController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ZHVideoCapture setup]:ZHVideoCapture.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController cancel]:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_canvasToolArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController keyboardWillShow:]:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_specView.frame.origin.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__35-[SpecificationViewController save]_block_invoke_3:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_textField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController viewDidLoad]:SpecificationViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController isContainPoint:andIndex:]:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((UIImageView *)_frameViewArray[i]).frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationAlbumViewController changeState:]:SpecificationAlbumViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController longPress13Frame]:SpecificationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexcell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationAlbumViewController beginSetSpecificationWithAsset:]:SpecificationAlbumViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_jsonArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[specificationCanvasView drawCanvasWithToolInGlk:]:specificationCanvasView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[specificationCanvasView collectionView:didSelectItemAtIndexPath:]:specificationCanvasView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationAlbumViewController viewWillAppear:]:SpecificationAlbumViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ModelPlayController setupVertexData]:ModelPlayController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController showFrameAtIndex:]:SpecificationViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__41-[ZHVideoCapture autoRecordFinishedWith:]_block_invoke_2:ZHVideoCapture.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "_isAuto">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SpecificationViewController save]:SpecificationViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

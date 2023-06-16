@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Golfer" representedClassName="Golfer" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="golfAge" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="golferID" optional="YES" attributeType="String"/>
+        <attribute name="height" attributeType="Float" defaultValueString="175" usesScalarValueType="YES"/>
+        <attribute name="hipLine" optional="YES" attributeType="Float" usesScalarValueType="YES"/>
+        <attribute name="icon" attributeType="String" defaultValueString="golfer.jpg"/>
+        <attribute name="name" attributeType="String" defaultValueString="golfer"/>
+        <attribute name="shoulderLine" optional="YES" attributeType="Float" usesScalarValueType="YES"/>
+        <attribute name="waistLine" optional="YES" attributeType="Float" usesScalarValueType="YES"/>
+        <attribute name="weight" attributeType="Float" defaultValueString="60" usesScalarValueType="YES"/>
+        <relationship name="swingList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Swing" inverseName="golfer" inverseEntity="Swing"/>
+    </entity>
+    <entity name="ScreenRecord" representedClassName="ScreenRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="creationTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="secs" attributeType="String" defaultValueString=""/>
+        <attribute name="shotPicFile" attributeType="String" defaultValueString=""/>
+        <attribute name="videoFile" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="Specifications" representedClassName="Specifications" syncable="YES" codeGenerationType="class">
+        <attribute name="frame" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Swing" representedClassName="Swing" syncable="YES" codeGenerationType="class">
+        <attribute name="defeatFlag2d" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="defeatFlagFlow" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="defeatFlagServer" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="keyFrame1" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secs" attributeType="String" defaultValueString="00:00"/>
+        <attribute name="shotPic" optional="YES" attributeType="String"/>
+        <attribute name="swingAngle" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <attribute name="swingId" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String" defaultValueString="swing"/>
+        <attribute name="trashFlag" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="uploadProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uploadTime" attributeType="Date" defaultDateTimeInterval="632223000" usesScalarValueType="NO"/>
+        <attribute name="url2d" optional="YES" attributeType="String"/>
+        <attribute name="url3d" optional="YES" attributeType="String"/>
+        <attribute name="urlOri" optional="YES" attributeType="String"/>
+        <attribute name="urlShotPic" optional="YES" attributeType="String"/>
+        <attribute name="video2dLocal" optional="YES" attributeType="String"/>
+        <attribute name="video2dServer" optional="YES" attributeType="String"/>
+        <attribute name="video3d" optional="YES" attributeType="String"/>
+        <attribute name="videoFlow" optional="YES" attributeType="String"/>
+        <attribute name="videoId" optional="YES" attributeType="String"/>
+        <attribute name="videoOri" optional="YES" attributeType="String"/>
+        <relationship name="golfer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Golfer" inverseName="swingList" inverseEntity="Golfer"/>
+    </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="creationTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="interpolate" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isFront" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="postFlag" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="secs" attributeType="String" defaultValueString="00:00"/>
+        <attribute name="shotPicFile" attributeType="String" defaultValueString="swing.jpg"/>
+        <attribute name="swingAngle" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <attribute name="swingId" optional="YES" attributeType="String"/>
+        <attribute name="trashFlag" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="uploadProgress" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <attribute name="videoFile" attributeType="String" defaultValueString="swing.mp4"/>
+        <attribute name="videoHeight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="videoWidth" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+</model>

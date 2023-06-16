@@ -1,0 +1,11 @@
+REFERENCE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.reference
+PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.params
+CALIBRATION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.calib
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.bdf
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.lmt
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009.sch
+GLOBAL_TRANSFORMATIONS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/GlobalTransformations_swing_009.gtf
+RAW_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/marker0_positions_swing_009.dat
+PREDICTED_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/marker_positions_swing_009.dat
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/mike_weir/swing_009_rttrack_params.dat

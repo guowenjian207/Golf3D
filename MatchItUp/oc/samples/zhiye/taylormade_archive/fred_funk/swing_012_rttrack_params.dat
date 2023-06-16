@@ -1,0 +1,9 @@
+PROBLEM_NAME: golfer_rh.driver_rh_flex.unmarked_ball
+CAMERA_CALIBRATION: $BIO_DATA_DIR/calib/cal_current_motion1,motion2,motion3
+CALIBRATION_ERROR: 0.2
+GRAPHICMODEL: $BIO_DIR/rttrack/rttrack_model.mdl
+REFERENCE_OFFSET: 0 0 0
+ACQUISITION_RATE: 60
+FILTER_LEVEL: 0.2
+AUTO_SCALE: 1
+DRIFT_COMPENSATION: 0

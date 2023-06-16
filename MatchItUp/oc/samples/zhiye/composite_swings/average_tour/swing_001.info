@@ -1,0 +1,16 @@
+CLUB/CLUB_type: DRIVER
+orig_handed: RIGHT
+activity: FULL_SWING
+CAPTURE_TYPE: Composite
+CLUB_NAME: Driver
+activity_option: FULL BODY
+DATAPAGE_ID: DRIVER
+TRACK_BALL: NO
+FIND_BALL: YES
+ANIM_FILE: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.anm
+KEYFRAME1: 1
+KEYFRAME2: 160
+KEYFRAME3: 202
+KEYFRAME4: 322
+CAPTURE_ID: tour_player_average
+COMMENT: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_001.acf

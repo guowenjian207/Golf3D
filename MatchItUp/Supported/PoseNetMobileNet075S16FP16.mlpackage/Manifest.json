@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "C3254EAE-C87C-4839-B727-B69D26B06886": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "DA78BF53-6C68-4CAE-8E26-9092BE81E0EC": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "FEDC55C6-DC22-4477-AAD2-75D0C5B2D6BC": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "PoseNetMobileNet075S16FP16.mlmodel",
+            "path": "com.apple.CoreML/PoseNetMobileNet075S16FP16.mlmodel"
+        }
+    },
+    "rootModelIdentifier": "FEDC55C6-DC22-4477-AAD2-75D0C5B2D6BC"
+}

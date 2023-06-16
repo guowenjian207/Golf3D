@@ -1,0 +1,12 @@
+RTTRACK_GLOB_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007_glob_data.dat
+REFERENCE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.reference
+PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.params
+CALIBRATION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.calib
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.bdf
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.lmt
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.sch
+GLOBAL_TRANSFORMATIONS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/GlobalTransformations_swing_007.gtf
+RAW_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/marker0_positions_swing_007.dat
+PREDICTED_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/marker_positions_swing_007.dat
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007_rttrack_params.dat

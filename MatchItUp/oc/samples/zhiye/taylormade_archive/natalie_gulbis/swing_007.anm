@@ -1,0 +1,10 @@
+Bio Animation File
+v1.00
+MODEL: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.mdl
+MAPPING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.dof
+MOTION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.var
+SCALING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.scl
+DATAPAGE_GRAPH_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.datapage_graph_data
+BALL_IMPACT_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.ball_impact_data
+CLUB_RECOMMENDATION_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.club_recom_measurements
+VARIABLE_DESCRIPTORS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_007.vdf

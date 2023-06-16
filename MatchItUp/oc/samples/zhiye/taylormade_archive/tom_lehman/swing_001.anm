@@ -1,0 +1,10 @@
+Bio Animation File
+v1.00
+MODEL: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.mdl
+MAPPING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.dof
+MOTION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.var
+PUTTER_ACCEL_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.putter_accel_data
+BALL_IMPACT_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.ball_impact_data
+CLUB_RECOMMENDATION_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.club_recom_measurements
+DATAPAGE_GRAPH_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.datapage_graph_data
+VARIABLE_DESCRIPTORS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/tom_lehman/swing_001.vdf

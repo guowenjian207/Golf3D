@@ -1,0 +1,166 @@
+Bio Problem Definition File
+v1.00
+  9     # of variables, var num, lim type, description
+    1    club X Translation
+    2    club Y Translation
+    3    club Z Translation
+    4    club X Rotation
+    5    club Y Rotation
+    6    club Z Rotation
+    7    ball X Translation
+    8    ball Y Translation
+    9    ball Z Translation
+  18    # of bodies, body names, parent names, graphics #, type
+ club                ReferenceSystemZero        1   0
+    1   2   3   6   4   5
+   1
+   2
+   3
+   4
+   5
+   6
+ ball                ReferenceSystemZero       11   0
+    1   2   3   6   5   4
+   7
+   8
+   9
+   0
+   0
+   0
+ length              club                       2   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+   0
+   0
+   0
+ left_grip           club                       6   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ right_grip          club                       7   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ left_grip2          club                       8   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ right_grip2         club                       9   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ lie                 length                     3   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ shafttemp_1         length                    31   0
+    2   5   1   3   6   4
+   0
+   0
+   0
+   0
+   0
+   0
+ shafttemp_2         length                    32   0
+    2   5   1   3   6   4
+   0
+   0
+   0
+   0
+   0
+   0
+ offset              lie                       21   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ hosel               offset                    22   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ putter_head         hosel                     23   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ loft                putter_head                4   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubface            loft                       5   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_1      clubface                  33   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_2      clubface                  34   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_3      clubface                  35   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+  5    # real points, point#, pred type #, weight, body name
+    1   4   2.000    club                
+    2   4   2.000    club                
+    3   4   2.000    clubface            
+    4   4   2.000    clubface            
+    5   4   2.000    ball
+  0    # fix points, point#, weight, body name
+  0    # double points, point #, double #, weight, body name
+  0    # artificial pairs, pt1#, pt2#, weight, body1 name, body2 name

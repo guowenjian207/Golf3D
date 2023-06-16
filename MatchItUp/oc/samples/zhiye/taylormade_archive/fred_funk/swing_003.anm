@@ -1,0 +1,11 @@
+Bio Animation File
+v1.00
+MODEL: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.mdl
+MAPPING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.dof
+MOTION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.var
+SCALING: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.scl
+PUTTER_ACCEL_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.putter_accel_data
+BALL_IMPACT_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.ball_impact_data
+CLUB_RECOMMENDATION_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.club_recom_measurements
+DATAPAGE_GRAPH_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.datapage_graph_data
+VARIABLE_DESCRIPTORS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_003.vdf

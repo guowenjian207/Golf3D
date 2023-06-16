@@ -1,0 +1,5 @@
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_019.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_019.bdf
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_019.sch
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_019.lmt
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/fred_funk/swing_019_rttrack_params.dat

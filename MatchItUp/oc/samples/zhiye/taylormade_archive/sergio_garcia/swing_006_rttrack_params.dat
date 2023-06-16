@@ -1,0 +1,9 @@
+PROBLEM_NAME: putter_offset_rh.ball
+CAMERA_CALIBRATION: /home/putting/data/calib/cal_current_motion1,motion2,motion3
+CALIBRATION_ERROR: 0.2
+GRAPHICMODEL: /home/putting/rttrack/rttrack_model.mdl
+REFERENCE_OFFSET: 0 0 0
+ACQUISITION_RATE: 60
+FILTER_LEVEL: 0.2
+AUTO_SCALE: 1
+DRIFT_COMPENSATION: 0

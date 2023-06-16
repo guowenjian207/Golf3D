@@ -1,0 +1,9 @@
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.bdf
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.lmt
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.sch
+PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.params
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001_rttrack_params.dat
+RTTRACK_GLOB_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_002_glob_data.dat
+REFERENCE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.reference
+CALIBRATION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/natalie_gulbis/swing_001.calib

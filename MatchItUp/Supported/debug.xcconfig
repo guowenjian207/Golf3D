@@ -1,0 +1,11 @@
+//
+//  debug.xcconfig
+//  FrameCut
+//
+//  Created by 安子和 on 2021/7/9.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SERVER_PORT = 37577

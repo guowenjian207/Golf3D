@@ -1,0 +1,16 @@
+CLUB/CLUB_type: DRIVER
+orig_handed: RIGHT
+activity: FULL_SWING
+CAPTURE_TYPE: Composite
+CLUB_NAME: 6_Iron
+activity_option: FULL BODY
+DATAPAGE_ID: IRON
+TRACK_BALL: NO
+FIND_BALL: YES
+ANIM_FILE: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_002.anm
+KEYFRAME1: 1
+KEYFRAME2: 153
+KEYFRAME3: 197
+KEYFRAME4: 337
+CAPTURE_ID: tour_player_average_6i
+COMMENT: $BIO_DATA_DIR/SESSION_DATA/composite_swings/average_tour/swing_002.acf

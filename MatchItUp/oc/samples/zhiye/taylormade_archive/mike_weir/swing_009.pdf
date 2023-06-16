@@ -1,0 +1,821 @@
+Bio Problem Definition File
+v1.00
+  63     # of variables, var num, lim type, description
+    1    Hip X Translation
+    2    Hip Y Translation
+    3    Hip Z Translation
+    4    Hip X Rotation
+    5    Hip Y Rotation
+    6    Hip Z Rotation
+    7    Back Y Translation
+    8    Back X Rotation
+    9    Back Y Rotation
+   10    Back Z Rotation
+   11    Neck X Rotation
+   12    Head Y Translation
+   13    Head X Rotation
+   14    Head Y Rotation
+   15    Head Z Rotation
+   16    Left Upper Leg X Rotation
+   17    Left Upper Leg Y Rotation
+   18    Left Upper Leg Z Rotation
+   19    Right Upper Leg X Rotation
+   20    Right Upper Leg Y Rotation
+   21    Right Upper Leg Z Rotation
+   22    Left Lower Leg X Rotation
+   23    Right Lower Leg X Rotation
+   24    Left Foot X Rotation
+   25    Left Foot Y Rotation
+   26    Left Foot Z Rotation
+   27    Right Foot X Rotation
+   28    Right Foot Y Rotation
+   29    Right Foot Z Rotation
+   30    Left Toe X Rotation
+   31    Right Toe X Rotation
+   32    Left Shoulder Y Translation
+   33    Left Shoulder Y Rotation
+   34    Left Shoulder Z Rotation
+   35    Right Shoulder Y Translation
+   36    Right Shoulder Y Rotation
+   37    Right Shoulder Z Rotation
+   38    Left Upper Arm X Rotation
+   39    Left Upper Arm Y Rotation
+   40    Left Upper Arm Z Rotation
+   41    Right Upper Arm X Rotation
+   42    Right Upper Arm Y Rotation
+   43    Right Upper Arm Z Rotation
+   44    Left Lower Arm X Rotation
+   45    Right Lower Arm X Rotation
+   46    Left Hand X Rotation
+   47    Left Wrist Y Rotation
+   48    Left Hand Z Rotation
+   49    Right Hand X Rotation
+   50    Right Wrist Y Rotation
+   51    Right Hand Z Rotation
+   52    club X Translation
+   53    club Y Translation
+   54    club Z Translation
+   55    club X Rotation
+   56    club Y Rotation
+   57    club Z Rotation
+   58    shaft X Rotation
+   59    shaft Y Rotation
+   60    shaft Z Rotation
+   61    ball X Translation
+   62    ball Y Translation
+   63    ball Z Translation
+  88    # of bodies, body names, parent names, graphics #, type
+ h_waist             ReferenceSystemZero        1   0
+    1   2   3   4   6   5
+   1
+   2
+   3
+   4
+   5
+   6
+ club                ReferenceSystemZero      101   0
+    1   2   3   6   4   5
+  52
+  53
+  54
+  55
+  56
+  57
+ ball                ReferenceSystemZero      111   0
+    1   2   3   6   5   4
+  61
+  62
+  63
+   0
+   0
+   0
+ h_torso_2           h_waist                    2   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ h_left_up_leg       h_waist                   21   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  16
+  17
+  18
+ h_right_up_leg      h_waist                   31   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  19
+  20
+  21
+ shaft_1             club                     141   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_torso_3           h_torso_2                  3   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ h_left_low_leg      h_left_up_leg             22   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  22
+   0
+   0
+ h_right_low_leg     h_right_up_leg            32   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  23
+   0
+   0
+ shaft_2             shaft_1                  142   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_torso_4           h_torso_3                  4   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ h_left_foot         h_left_low_leg            23   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  24
+  25
+  26
+ h_right_foot        h_right_low_leg           33   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  27
+  28
+  29
+ shaft_3             shaft_2                  143   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_torso_5           h_torso_4                  5   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ h_left_toes         h_left_foot               24   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  30
+   0
+   0
+ h_right_toes        h_right_foot              34   0
+    1   2   3   4   6   5
+   0
+   0
+   0
+  31
+   0
+   0
+ shaft_4             shaft_3                  144   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_torso_6           h_torso_5                  6   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ shaft_5             shaft_4                  145   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_torso_7           h_torso_6                  7   0
+    1   2   3   4   6   5
+   0
+   7
+   0
+   8
+   9
+  10
+ shaft_6             shaft_5                  146   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_neck_1            h_torso_7                  8   0
+    1   2   3   4   6   5
+   0
+  12
+   0
+  11
+  14
+  15
+ h_left_shoulder     h_torso_7                 41   0
+    1   2   3   6   4   5
+   0
+  32
+   0
+   0
+  33
+  34
+ h_right_shoulder    h_torso_7                 71   0
+    1   2   3   6   4   5
+   0
+  35
+   0
+   0
+  36
+  37
+ shaft_7             shaft_6                  147   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_neck_2            h_neck_1                   9   0
+    1   2   3   4   6   5
+   0
+  12
+   0
+  11
+  14
+  15
+ h_left_up_arm       h_left_shoulder           42   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  38
+  39
+  40
+ h_right_up_arm      h_right_shoulder          72   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  41
+  42
+  43
+ shaft_8             shaft_7                  148   0
+    1   2   3   6   4   5
+   0
+   0
+   0
+  58
+  59
+  60
+ h_head              h_neck_2                  10   0
+    1   2   3   4   6   5
+   0
+  12
+   0
+  13
+  14
+  15
+ h_left_low_arm      h_left_up_arm             43   1
+    1   2   3   4   6   5
+   0
+   0
+   0
+  44
+   0
+   0
+  47
+ h_right_low_arm     h_right_up_arm            73   1
+    1   2   3   4   6   5
+   0
+   0
+   0
+  45
+   0
+   0
+  50
+ length              shaft_8                  102   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_wrist        h_left_low_arm            44   0
+    1   2   3   5   6   4
+   0
+   0
+   0
+   0
+  47
+   0
+ h_right_wrist       h_right_low_arm           74   0
+    1   2   3   5   6   4
+   0
+   0
+   0
+   0
+  50
+   0
+ hosel               length                   122   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ shafttemp_1         length                   131   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ shafttemp_2         length                   132   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_hand         h_left_wrist              45   0
+    1   2   3   4   5   6
+   0
+   0
+   0
+  46
+   0
+  48
+ h_right_hand        h_right_wrist             75   0
+    1   2   3   4   5   6
+   0
+   0
+   0
+  49
+   0
+  51
+ lie                 hosel                    103   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mcarpal_2    h_left_hand               46   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mcarpal_3    h_left_hand               47   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mcarpal_4    h_left_hand               48   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mcarpal_5    h_left_hand               49   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_up_fing_1    h_left_hand               50   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_club         h_left_hand             1001   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mcarpal_2   h_right_hand              76   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mcarpal_3   h_right_hand              77   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mcarpal_4   h_right_hand              78   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mcarpal_5   h_right_hand              79   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ loft                lie                      104   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_up_fing_1   h_right_hand              80   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_club        h_right_hand            1002   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_up_fing_2    h_left_mcarpal_2          53   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_up_fing_3    h_left_mcarpal_3          56   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_up_fing_4    h_left_mcarpal_4          59   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_up_fing_5    h_left_mcarpal_5          62   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mid_fing_1   h_left_up_fing_1          51   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_up_fing_2   h_right_mcarpal_2         83   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_up_fing_3   h_right_mcarpal_3         86   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_up_fing_4   h_right_mcarpal_4         89   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_up_fing_5   h_right_mcarpal_5         92   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubface            loft                     105   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mid_fing_1  h_right_up_fing_1         81   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mid_fing_2   h_left_up_fing_2          54   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mid_fing_3   h_left_up_fing_3          57   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mid_fing_4   h_left_up_fing_4          60   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_mid_fing_5   h_left_up_fing_5          63   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_low_fing_1   h_left_mid_fing_1         52   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mid_fing_2  h_right_up_fing_2         84   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mid_fing_3  h_right_up_fing_3         87   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mid_fing_4  h_right_up_fing_4         90   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_mid_fing_5  h_right_up_fing_5         93   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_1      clubface                 133   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_2      clubface                 134   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ clubfacetemp_3      clubface                 135   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_low_fing_1  h_right_mid_fing_1        82   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_low_fing_2   h_left_mid_fing_2         55   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_low_fing_3   h_left_mid_fing_3         58   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_low_fing_4   h_left_mid_fing_4         61   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_left_low_fing_5   h_left_mid_fing_5         64   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_low_fing_2  h_right_mid_fing_2        85   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_low_fing_3  h_right_mid_fing_3        88   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_low_fing_4  h_right_mid_fing_4        91   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+ h_right_low_fing_5  h_right_mid_fing_5        94   0
+    1   2   3   6   5   4
+   0
+   0
+   0
+   0
+   0
+   0
+  34    # real points, point#, pred type #, weight, body name
+    1   4   2.000    h_head              
+    2   4   2.000    h_head              
+    3   4   2.000    h_head              
+    4   4   2.000    h_right_shoulder    
+    5   4   2.000    h_left_shoulder     
+    6   4   2.000    h_left_shoulder     
+    7   4   2.000    h_torso_7           
+    8   4   2.000    h_right_shoulder    
+    9   4   2.000    h_torso_4           
+   10   4   2.000    h_torso_4           
+   11   4   0.000    h_waist             
+   12   4   2.000    h_waist             
+   13   4   2.000    h_waist             
+   14   4   2.000    h_waist             
+   15   4   2.000    h_right_low_leg     
+   16   4   2.000    h_right_low_leg     
+   17   4   2.000    h_left_low_leg      
+   18   4   2.000    h_left_low_leg      
+   19   4   2.000    h_right_foot        
+   20   4   2.000    h_right_foot        
+   21   4   2.000    h_right_toes        
+   22   4   2.000    h_left_toes         
+   23   4   2.000    h_left_foot         
+   24   4   2.000    h_left_foot         
+   25   4   2.000    h_right_low_arm     
+   26   4   2.000    h_left_low_arm      
+   27   4   0.000    h_right_wrist       
+   28   4   2.000    h_left_wrist        
+   29   4 200.000    club
+   30   4 200.000    club
+   31   4 200.000    club
+   32   4 200.000    clubface
+   33   4 200.000    clubface
+   34   4 200.000    clubface
+  0    # fix points, point#, weight, body name
+  0    # double points, point #, double #, weight, body name
+  10    # artificial pairs, pt1#, pt2#, weight, body1 name, body2 name
+   35  36   1.000    h_torso_3               h_torso_2           
+   37  38   1.000    h_left_shoulder         h_torso_7           
+   39  40   1.000    h_right_shoulder        h_torso_7           
+   41  42   1.000    h_neck_2                h_head              
+   43  44  30.000    club                    h_left_club
+   45  46  30.000    club                    h_left_club
+   47  48  30.000    club                    h_left_club
+   49  50  30.000    club                    h_right_club
+   51  52  30.000    club                    h_right_club
+   53  54  30.000    club                    h_right_club

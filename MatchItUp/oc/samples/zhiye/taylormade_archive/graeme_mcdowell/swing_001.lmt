@@ -1,0 +1,470 @@
+Bio System Variable Limits File
+v2.00
+VARIABLE {
+  ID: 7
+  LOWER {
+    VALUE: -0.25
+  }
+  UPPER {
+    VALUE: 0.25
+  }
+}
+VARIABLE {
+  ID: 8
+  LOWER {
+    VALUE: -0.25
+  }
+  UPPER {
+    VALUE: 0.40
+  }
+}
+VARIABLE {
+  ID: 9
+  LOWER {
+    VALUE: -0.35
+  }
+  UPPER {
+    VALUE: 0.35
+  }
+}
+VARIABLE {
+  ID: 10
+  LOWER {
+    VALUE: -0.30
+  }
+  UPPER {
+    VALUE: 0.30
+  }
+}
+VARIABLE {
+  ID: 11
+  LOWER {
+    VALUE: -0.40
+  }
+  UPPER {
+    VALUE: 0.50
+  }
+}
+VARIABLE {
+  ID: 12
+  LOWER {
+    VALUE: -0.10
+  }
+  UPPER {
+    VALUE: 0.10
+  }
+}
+VARIABLE {
+  ID: 13
+  LOWER {
+    VALUE: -0.50
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 14
+  LOWER {
+    VALUE: -0.75
+  }
+  UPPER {
+    VALUE: 0.75
+  }
+}
+VARIABLE {
+  ID: 15
+  LOWER {
+    VALUE: -0.40
+  }
+  UPPER {
+    VALUE: 0.40
+  }
+}
+VARIABLE {
+  ID: 16
+  LOWER {
+    VALUE: -1.50
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 17
+  LOWER {
+    VALUE: -1.00
+  }
+  UPPER {
+    VALUE: 1.00
+  }
+}
+VARIABLE {
+  ID: 18
+  LOWER {
+    VALUE: -0.60
+  }
+  UPPER {
+    VALUE: 1.20
+  }
+}
+VARIABLE {
+  ID: 19
+  LOWER {
+    VALUE: -1.50
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 20
+  LOWER {
+    VALUE: -1.00
+  }
+  UPPER {
+    VALUE: 1.00
+  }
+}
+VARIABLE {
+  ID: 21
+  LOWER {
+    VALUE: -1.20
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 22
+  LOWER {
+    VALUE: -0.15
+  }
+  UPPER {
+    VALUE: 2.70
+  }
+}
+VARIABLE {
+  ID: 23
+  LOWER {
+    VALUE: -0.15
+  }
+  UPPER {
+    VALUE: 2.70
+  }
+}
+VARIABLE {
+  ID: 24
+  LOWER {
+    VALUE: -0.50
+  }
+  UPPER {
+    VALUE: 0.80
+  }
+}
+VARIABLE {
+  ID: 25
+  LOWER {
+    VALUE: -0.50
+  }
+  UPPER {
+    VALUE: 0.35
+  }
+}
+VARIABLE {
+  ID: 26
+  LOWER {
+    VALUE: -0.80
+  }
+  UPPER {
+    VALUE: 0.50
+  }
+}
+VARIABLE {
+  ID: 27
+  LOWER {
+    VALUE: -0.50
+  }
+  UPPER {
+    VALUE: 0.80
+  }
+}
+VARIABLE {
+  ID: 28
+  LOWER {
+    VALUE: -0.35
+  }
+  UPPER {
+    VALUE: 0.50
+  }
+}
+VARIABLE {
+  ID: 29
+  LOWER {
+    VALUE: -0.50
+  }
+  UPPER {
+    VALUE: 0.80
+  }
+}
+VARIABLE {
+  ID: 30
+  LOWER {
+    VALUE: 0.00
+  }
+  UPPER {
+    VALUE: 0.00
+  }
+}
+VARIABLE {
+  ID: 31
+  LOWER {
+    VALUE: 0.00
+  }
+  UPPER {
+    VALUE: 0.00
+  }
+}
+VARIABLE {
+  ID: 32
+  LOWER {
+    VALUE: 0.00
+  }
+  UPPER {
+    VALUE: 0.00
+  }
+}
+VARIABLE {
+  ID: 33
+  LOWER {
+    VALUE: -0.60
+  }
+  UPPER {
+    VALUE: 0.35
+  }
+}
+VARIABLE {
+  ID: 34
+  LOWER {
+    VALUE: -0.60
+  }
+  UPPER {
+    VALUE: 1.00
+  }
+}
+VARIABLE {
+  ID: 35
+  LOWER {
+    VALUE: 0.00
+  }
+  UPPER {
+    VALUE: 0.00
+  }
+}
+VARIABLE {
+  ID: 36
+  LOWER {
+    VALUE: -0.35
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 37
+  LOWER {
+    VALUE: -1.00
+  }
+  UPPER {
+    VALUE: 0.60
+  }
+}
+VARIABLE {
+  ID: 38
+  LOWER {
+    VALUE: -3.00
+  }
+  UPPER {
+    VALUE: 0.50
+  }
+}
+VARIABLE {
+  ID: 39
+  LOWER {
+    VALUE: -3.50
+  }
+  UPPER {
+    VALUE: 3.50
+  }
+}
+VARIABLE {
+  ID: 40
+  LOWER {
+    VALUE: -4.50
+  }
+  UPPER {
+    VALUE: 2.50
+  }
+}
+VARIABLE {
+  ID: 41
+  LOWER {
+    VALUE: -3.00
+  }
+  UPPER {
+    VALUE: 0.50
+  }
+}
+VARIABLE {
+  ID: 42
+  LOWER {
+    VALUE: -3.50
+  }
+  UPPER {
+    VALUE: 3.50
+  }
+}
+VARIABLE {
+  ID: 43
+  LOWER {
+    VALUE: -2.50
+  }
+  UPPER {
+    VALUE: 4.50
+  }
+}
+VARIABLE {
+  ID: 44
+  LOWER {
+    VALUE: -2.50
+  }
+  UPPER {
+    VALUE: 0.05
+  }
+}
+VARIABLE {
+  ID: 45
+  LOWER {
+    VALUE: -2.50
+  }
+  UPPER {
+    VALUE: 0.05
+  }
+}
+VARIABLE {
+  ID: 46
+  LOWER {
+    VALUE: -2.00
+  }
+  UPPER {
+    VALUE: 1.00
+  }
+}
+VARIABLE {
+  ID: 47
+  LOWER {
+    VALUE: -1.20
+  }
+  UPPER {
+    VALUE: 1.60
+  }
+}
+VARIABLE {
+  ID: 48
+  LOWER {
+    VALUE: -1.30
+  }
+  UPPER {
+    VALUE: 2.50
+  }
+}
+VARIABLE {
+  ID: 49
+  LOWER {
+    VALUE: -2.00
+  }
+  UPPER {
+    VALUE: 1.00
+  }
+}
+VARIABLE {
+  ID: 50
+  LOWER {
+    VALUE: -1.60
+  }
+  UPPER {
+    VALUE: 1.20
+  }
+}
+VARIABLE {
+  ID: 51
+  LOWER {
+    VALUE: -2.50
+  }
+  UPPER {
+    VALUE: 1.30
+  }
+}
+VARIABLE {
+  ID: 58
+  LOWER {
+    VALUE: -0.05
+  }
+  UPPER {
+    VALUE: 0.05
+  }
+}
+VARIABLE {
+  ID: 59
+  LOWER {
+    VALUE: -0.08
+  }
+  UPPER {
+    VALUE: 0.08
+  }
+}
+VARIABLE {
+  ID: 60
+  LOWER {
+    VALUE: -0.05
+  }
+  UPPER {
+    VALUE: 0.05
+  }
+}
+VARIABLE {
+  ID: 64
+  LOWER {
+    VALUE: -0.25
+  }
+  UPPER {
+    VALUE: 0.25
+  }
+}
+VARIABLE {
+  ID: 65
+  LOWER {
+    VALUE: -0.25
+  }
+  UPPER {
+    VALUE: 0.25
+  }
+}
+VARIABLE {
+  ID: 66
+  LOWER {
+    VALUE: -2.00
+  }
+  UPPER {
+    VALUE: 2.00
+  }
+}
+VARIABLE {
+  ID: 67
+  LOWER {
+    VALUE: -2.00
+  }
+  UPPER {
+    VALUE: 2.00
+  }
+}

@@ -1,0 +1,12 @@
+RTTRACK_GLOB_DATA: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_003_glob_data.dat
+REFERENCE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.reference
+PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_003.params
+CALIBRATION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.calib
+PROBDEF_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.pdf
+MODELS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.bdf
+LIMITS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.lmt
+SEARCH_PARAMS_FILE: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_001.sch
+GLOBAL_TRANSFORMATIONS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/GlobalTransformations_swing_003.gtf
+RAW_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/marker0_positions_swing_001.dat
+PREDICTED_MARKER_POSITION: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/marker_positions_swing_001.dat
+RTTRACK_PARAMS: $BIO_DATA_DIR/SESSION_DATA/taylormade_archive/hank_kuehne/swing_003_rttrack_params.dat

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "resizeApi.php-15_gaitubao_29x25.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "resizeApi.php-15_gaitubao_57x50.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "resizeApi.php-15_gaitubao_86x75.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,26 @@
+PROBLEM_TYPE: analyze
+PROBDEF_FILE: probspec/golfer_rh.club_flex.unmarked_ball/golfer_rh.club_flex.unmarked_ball.pdf
+MODELS_FILE: club_fitting/misc/golfer.club.ball.bdf
+LIMITS_FILE: probspec/golfer_rh.club_flex.unmarked_ball/golfer_rh.club_flex.unmarked_ball.lmt
+SEARCH_PARAMS_FILE: probspec/golfer_rh.club_flex.unmarked_ball/golfer_rh.club_flex.unmarked_ball.sch
+MARKER_COUNT: 32
+VAR_UNITS_SCALE: 1 12
+VAR_UNITS_SCALE: 2 12
+VAR_UNITS_SCALE: 3 12
+VAR_UNITS_SCALE: 142 12
+VAR_UNITS_SCALE: 143 12
+VAR_UNITS_SCALE: 144 12
+VAR_UNITS_SCALE: 151 12
+VAR_UNITS_SCALE: 152 12
+VAR_UNITS_SCALE: 153 12
+CONSTRAINT: 7 9   0.5 1.5 1   1
+CONSTRAINT: 7 10  0.5 1.5 1   1
+CONSTRAINT: 27 28 0.90 1.10 1   1
+CONSTRAINT: 27 29 0.90 1.10 1   1
+CONSTRAINT: 28 29 0.90 1.10 1   1
+CONSTRAINT: 30 31 0.90 1.10 1   1
+CONSTRAINT: 30 32 0.90 1.10 1   1
+CONSTRAINT: 31 32 0.90 1.10 1   1
+ANALYSIS_MODEL: 
+ADAPTIVE_FRAME_SKIP: 1
+MAX_FRAME_SKIP: 5

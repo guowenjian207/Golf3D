@@ -1,0 +1,13 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "PoseNet estimates human pose for a single person or multiple people. This model supports the input sizes 257x257, 353x353 and 513x513. This version uses a MobileNetV1 architecture with a width multiplier of 0.75 and an output stride of 16; refer to the source project repository for more details - https:\/\/github.com\/tensorflow\/tfjs-models\/tree\/master\/posenet",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.developer.machine-learning.models.category" : "image",
+    "com.apple.developer.machine-learning.models.version" : "1.1",
+    "com.apple.coreml.model.preview.type" : "poseEstimation",
+    "com.apple.developer.machine-learning.models.name" : "PoseNetMobileNet075S16FP16.mlmodel",
+    "coremltoolsVersion" : "4.0a1"
+  },
+  "MLModelAuthorKey" : "George Papandreou and Tyler Zhu; Google researchers behind the papers Towards Accurate Multi-person Pose Estimation in the Wild and PersonLab: Person Pose Estimation and Instance Segmentation with a Bottom-Up, Part-Based, Geometric Embedding Model. Nikhil Thorat and Daniel Smilkov; engineers behind TensorflowJS.",
+  "MLModelLicenseKey" : "Please see https:\/\/github.com\/infocom-tpo\/PoseNet-CoreML for license information for the converter and https:\/\/github.com\/tensorflow\/tfjs-models for license information for the original model."
+}
