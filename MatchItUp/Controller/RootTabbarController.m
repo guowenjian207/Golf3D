@@ -33,7 +33,7 @@
     //相册
     [self addAlbumViewController];
     
-    [self addCameraViewController];
+//    [self addCameraViewController];
 }
 - (void)addModelPlayViewController{
     UINavigationController *navigationControler = [[UINavigationController alloc]init];
