@@ -68,10 +68,10 @@
         NSFontAttributeName : [GlobalVar sharedInstance].titleFont,
         //NSForegroundColorAttributeName : UIColor.lightGrayColor
     }];
-    UIImage *img = [UIImage imageNamed:@"analyzer"];
+    UIImage *img = [UIImage imageNamed:@"camera"];
     navigationControler.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"" image:img selectedImage:img];
     
-    CameraViewController *vc = [[CameraViewController    alloc]init];
+    CameraViewController *vc = [[CameraViewController alloc]init];
     [navigationControler pushViewController:vc animated:NO];
     [self addChildViewController:navigationControler];
 }

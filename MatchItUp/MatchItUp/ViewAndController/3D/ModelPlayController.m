@@ -233,13 +233,13 @@ static NSInteger const kCoordCount = 36;
 }
 // 配置纹理
 - (void)setupTexture{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi" ofType:@"jpg"];
-
-     //初始化纹理
-    NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
-    _textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
-
-    NSLog(@"textureInfo.name: %d", _textureInfo.name);
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi" ofType:@"jpg"];
+//
+//     //初始化纹理
+//    NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
+//    _textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
+//
+//    NSLog(@"textureInfo.name: %d", _textureInfo.name);
     
     
 //    self.exEffect =  [[GLKBaseEffect alloc] init];
@@ -254,8 +254,8 @@ static NSInteger const kCoordCount = 36;
     
     // 使用苹果`GLKit`提供的`GLKBaseEffect`完成着色器工作(顶点/片元)
     self.baseEffect = [[GLKBaseEffect alloc] init];
-    self.baseEffect.texture2d0.enabled = GL_TRUE;
-    self.baseEffect.texture2d0.name = _textureInfo.name;
+//    self.baseEffect.texture2d0.enabled = GL_TRUE;
+//    self.baseEffect.texture2d0.name = _textureInfo.name;
     
     self.baseEffect.light0.enabled = YES; // 开启光照效果
     self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
@@ -576,8 +576,8 @@ static NSInteger const kCoordCount = 36;
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(MyVertex, positionCoodinate));
     glEnableVertexAttribArray(GLKVertexAttribNormal);
     glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), NULL+offsetof(MyVertex, normal));
-    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(MyVertex), NULL+offsetof(MyVertex, texture));
+//    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+//    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(MyVertex), NULL+offsetof(MyVertex, texture));
     // 准备绘制
     [self.baseEffect prepareToDraw];
 
