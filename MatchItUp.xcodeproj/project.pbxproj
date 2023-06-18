@@ -1616,6 +1616,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MatchItUp/Supported/debug.Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MatchItUp;
 				INFOPLIST_KEY_NSCameraUsageDescription = "录制挥杆视频";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " position use";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "画布操作录音";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "向系统相册中添加挥杆视频";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "获取系统相册中的挥杆视频";
@@ -1629,15 +1630,18 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.18.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwj.MatchItUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "MatchItUp/View/ZHDoubleSlider/MatchItUp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1655,6 +1659,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = MatchItUp/MatchItUp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GM3FDHAM9P;
@@ -1666,6 +1671,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MatchItUp/Supported/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MatchItUp;
 				INFOPLIST_KEY_NSCameraUsageDescription = "录制挥杆视频";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " position use";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "画布操作录音";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "向系统相册中添加挥杆视频";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "获取系统相册中的挥杆视频";
@@ -1679,14 +1685,18 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.18.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwj.MatchItUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "MatchItUp/View/ZHDoubleSlider/MatchItUp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
