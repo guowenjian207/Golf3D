@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *changeBackgroudBtn;
 @property (nonatomic, strong) UIButton *rotationlBtn;
 @property (nonatomic, strong) UIButton *settinglBtn;
+
+@property (nonatomic,strong)  UILabel *topLabel;
 - (instancetype)initWithFrame:(CGRect)frame;
 - (void)drawLine2with:(CGPoint)point;
 

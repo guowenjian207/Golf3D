@@ -38,6 +38,20 @@
                     make.height.mas_equalTo(30);
         }];
         
+        _topLabel = [[UILabel alloc]init];
+        [_topLabel setFont: [UIFont boldSystemFontOfSize:20]];
+        [_topLabel setTextAlignment:NSTextAlignmentCenter];
+//        _topLabel.text = @"hhhhhhh";
+        _topLabel.textColor = [UIColor whiteColor];
+        [_topView addSubview:_topLabel];
+        
+        [_topLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.left.equalTo(_topView);
+            make.top.equalTo(_topView);
+            make.bottom.equalTo(_topView);
+        }];
+        
+        
         _glkView = [[GLKView alloc] init];
         [_tmpView addSubview:_glkView];
         

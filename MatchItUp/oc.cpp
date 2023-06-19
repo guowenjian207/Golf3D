@@ -28,7 +28,7 @@
 using namespace std;
 
 
-
+string player_name_with_num;
 vector<vector<double>> translation;
 vector<vector<double>> getClubTranslation();
 float angle=0;
@@ -106,6 +106,13 @@ void InitModel()
     bvhs.computeVexNormal();
 }
 
+Vector3 ball_translation(Vector3 vw,Vector3 trans){
+    vw.x += trans.x;
+    vw.y += trans.y;
+    vw.z += trans.z;
+    return vw;
+    
+}
 
 std::vector<std::string> getTransOrder() {
     std::vector<std::string> visionOrder;
@@ -433,7 +440,7 @@ std::vector<std::string> getPre3dOrder() {
         visionOrder.push_back("lie");
         visionOrder.push_back("loft");
         visionOrder.push_back("clubface");
-//        visionOrder.push_back("ball");
+        visionOrder.push_back("ball");
     }
     
     //visionOrder.push_back("ball");
@@ -2203,6 +2210,11 @@ vector<int> test_key_frames(string player_name){ // 保存关键帧，从0开始
         vector<int> vc(arr, arr+13);
         return vc;
     }
+    else if (player_name == "sean_ohair1"){
+        int arr[13]= {0,22,37,53,83,98,106,109,110,113,118,126,177};
+        vector<int> vc(arr, arr+13);
+        return vc;
+    }
     else{
         int arr[13]= {0,0,0,0,0,0,0,0,0,0,0,0,0};
         vector<int> vc(arr, arr+13);
@@ -2638,9 +2650,25 @@ vector<vector<vector<double>>> recursivedrawFace_wj_order(Bvh &bvhs){
                                                 pos.push_back(vw.z+translation[1][2]);
                                             }
                                             else{
-                                                pos.push_back(vw.x+translation[0][0]);
-                                                pos.push_back(vw.y+translation[0][1]);
-                                                pos.push_back(vw.z+translation[0][2]);
+                                                if(part->name == "ball" && player == "sean_ohair"){
+                                                    vw = ball_translation(vw, Vector3(0,1.3,1.5));
+                                                }
+                                                else if(part->name == "ball" && player_name_with_num == "dustin_johnson1"){
+                                                    vw = ball_translation(vw, Vector3(0,-2,-2.5));
+                                                }
+                                                else if(part->name == "ball" && player_name_with_num == "dustin_johnson2"){
+                                                    vw = ball_translation(vw, Vector3(-2,-2,-2.5));
+                                                }
+                                                if(part->name == "ball"){
+                                                    pos.push_back(vw.x);
+                                                    pos.push_back(vw.y);
+                                                    pos.push_back(vw.z);
+                                                }
+                                                else{
+                                                    pos.push_back(vw.x+translation[0][0]);
+                                                    pos.push_back(vw.y+translation[0][1]);
+                                                    pos.push_back(vw.z+translation[0][2]);
+                                                }
                                             }
                                         }
                                         else{
@@ -3106,11 +3134,13 @@ string dofFile;
 string varFile;
 string initPlayer;
 
+
 void fileName(string path, string player_name){
     string club_parent = "h_left_low_fing_1";
     cout<<player<<endl;
     string file = path  + "/oc/samples/zhiye/taylormade_archive/";
     string tmp = player_name;
+    player_name_with_num = tmp;
     tmp.erase(tmp.end() - 1);
     file += tmp;
     cur_player = player_name;

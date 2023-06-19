@@ -793,13 +793,13 @@ static NSInteger const kCoordCount = 36;
             tmpImgView.frame = CGRectMake(0, 0, (self.view.frame.size.width - 18) / 6, (self.view.frame.size.width - 18) / 24*5);
             
             
-//            UIGraphicsBeginImageContextWithOptions(self.glkView.bounds.size, NO, 0.0f);
-//            NSLog(@"%f,%f",self.glkView.bounds.size.width,self.glkView.bounds.size.height);
-////            [self.glkView.layer renderInContext:UIGraphicsGetCurrentContext()];
-//            [self.glkView drawViewHierarchyInRect:self.glkView.bounds afterScreenUpdates:YES];
-//            UIImage * resultImg = UIGraphicsGetImageFromCurrentImageContext();
-//            UIGraphicsEndImageContext();
-            UIImage* resultImg = self.glkView.snapshot;
+            UIGraphicsBeginImageContextWithOptions(self.glkView.bounds.size, NO, 0.0f);
+            NSLog(@"%f,%f",self.glkView.bounds.size.width,self.glkView.bounds.size.height);
+//            [self.glkView.layer renderInContext:UIGraphicsGetCurrentContext()];
+            [self.glkView drawViewHierarchyInRect:self.glkView.bounds afterScreenUpdates:YES];
+            UIImage * resultImg = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+//            UIImage* resultImg = self.glkView.snapshot;
             tmpImgView.image = resultImg;
             CGPoint point = [recognizer locationInView:self.view];
             tmpImgView.center = point;

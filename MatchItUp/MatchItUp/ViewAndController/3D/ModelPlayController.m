@@ -132,7 +132,7 @@ static NSInteger const kCoordCount = 36;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    _mp.topLabel.text = self.player_name;
     [self addDisplayLink];
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -254,8 +254,8 @@ static NSInteger const kCoordCount = 36;
     
     // 使用苹果`GLKit`提供的`GLKBaseEffect`完成着色器工作(顶点/片元)
     self.baseEffect = [[GLKBaseEffect alloc] init];
-    self.baseEffect.texture2d0.enabled = GL_TRUE;
-    self.baseEffect.texture2d0.name = _textureInfo.name;
+//    self.baseEffect.texture2d0.enabled = GL_TRUE;
+//    self.baseEffect.texture2d0.name = _textureInfo.name;
     
     self.baseEffect.light0.enabled = YES; // 开启光照效果
     self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
@@ -693,6 +693,7 @@ static NSInteger const kCoordCount = 36;
     }
     self.gl = [[GolferModel alloc] init:self.player_name];
     _mp.slider.maximumValue=self.gl.frames;
+    _mp.topLabel.text = self.player_name;
 }
 -(void) pushToSetting{
     SpecificationViewController *vc = [[SpecificationViewController alloc] initWithModel:self.gl andBackgroundID:(int)_backgroundID andPlayerName:_player_name];

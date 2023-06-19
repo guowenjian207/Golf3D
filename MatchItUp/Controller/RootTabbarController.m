@@ -33,7 +33,7 @@
     //相册
     [self addAlbumViewController];
     
-//    [self addCameraViewController];
+    [self addCameraViewController]; 
 }
 - (void)addModelPlayViewController{
     UINavigationController *navigationControler = [[UINavigationController alloc]init];
@@ -68,7 +68,7 @@
         NSFontAttributeName : [GlobalVar sharedInstance].titleFont,
         //NSForegroundColorAttributeName : UIColor.lightGrayColor
     }];
-    UIImage *img = [UIImage imageNamed:@"analyzer"];
+    UIImage *img = [UIImage imageNamed:@"camera"];
     navigationControler.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"" image:img selectedImage:img];
     
     CameraViewController *vc = [[CameraViewController    alloc]init];

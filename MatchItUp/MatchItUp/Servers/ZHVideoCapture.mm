@@ -192,7 +192,7 @@
     humanDetector = [[HumanBodyPoseDetector alloc]init];
     humanDetector.delegate = self;
     _personView = [[UIView alloc]init];
-    _personView.layer.borderColor = UIColor.redColor.CGColor;
+//    _personView.layer.borderColor = UIColor.redColor.CGColor;
     _personView.layer.borderWidth = 2;
     indexOfHumanDetect = 0;
     flagOfHumanDetect = 1;
@@ -798,13 +798,11 @@
         NSLog(@"%d",flagOfHumanDetect);
         indexOfHumanDetect = 0;
         if(!isRecording){
-            
+            [self predictHumanBBox:sampleBuffer];
         }
         if(isDetect){
-           
-            [self predictHumanBBox:sampleBuffer];
             //NSLog(@"%@",_isAuto?@"自动录制":@"不自动");
-            [self->humanDetector predict:sampleBuffer isAutoRecord:_isAuto];
+//            [self->humanDetector predict:sampleBuffer isAutoRecord:_isAuto];
         }
     }else{
         indexOfHumanDetect++;
@@ -1134,6 +1132,17 @@ CVPixelBufferRef createCroppedPixelBufferCoreImage(CVPixelBufferRef pixelBuffer,
             }
         }
     }
+    if(rect.size.height < kScreenH/3-30 || rect.size.height > kScreenH/3+30){
+        [self changeFactor:self->cameraDevice.videoZoomFactor *  kScreenH/3/rect.size.height];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            self-> _personView.layer.borderColor = UIColor.redColor.CGColor;
+        });
+//        NSLog(@"当前线程：%@",[NSThread currentThread]);
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            self-> _personView.layer.borderColor = UIColor.greenColor.CGColor;
+        });
+    }
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [self->_personView setHidden:NO];
         if (abs(self->_personView.frame.origin.x - rect.origin.x) < 5 &&
@@ -1144,10 +1153,6 @@ CVPixelBufferRef createCroppedPixelBufferCoreImage(CVPixelBufferRef pixelBuffer,
             self->_personView.frame = rect;
         }
     });
-    if(rect.size.height < kScreenH/3-30 || rect.size.height > kScreenH/3+30){
-        [self changeFactor:self->cameraDevice.videoZoomFactor *  kScreenH/3/rect.size.height];
-//        NSLog(@"当前线程：%@",[NSThread currentThread]);
-    }
 }
 
 #pragma mark - HumanBodyPoseDetectorDelegate
