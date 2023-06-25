@@ -681,7 +681,9 @@
             
             _angleLabel1.center = point2;
         }
-        
+        if([_name isEqual:@"Shaft_Line"]){
+            _angleLabel1.center = point2;
+        }
         _angleLabel1.textColor = _color;
 //        [_angleLabel1 setFont:[UIFont systemFontOfSize:15.0]];
     }

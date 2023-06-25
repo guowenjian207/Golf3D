@@ -161,6 +161,13 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView==specCollectionView){
         FrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"spec" forIndexPath:indexPath];
+        [cell selectCell];
+        [specCollectionView reloadItemsAtIndexPaths:@[indexPath]];
+        // 获取之前选中的cell
+//        NSIndexPath *previousSelectedIndexPath = [[collectionView indexPathsForSelectedItems] firstObject];
+//        FrameCollectionViewCell *previousSelectedCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"spec" forIndexPath:previousSelectedIndexPath];
+//        [previousSelectedCell sesetting];
+//        [specCollectionView reloadItemsAtIndexPaths:@[previousSelectedIndexPath]];
         cell.highlighted = YES;
         [showCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }

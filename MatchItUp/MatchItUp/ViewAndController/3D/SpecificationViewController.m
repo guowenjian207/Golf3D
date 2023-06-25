@@ -302,6 +302,9 @@ static NSInteger const kCoordCount = 36;
     [self rmakeData];
     [self viewHidden];
     _cuurrentAsset = nil;
+    if (self.navigationController) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
 -(void) save{
     
@@ -357,6 +360,9 @@ static NSInteger const kCoordCount = 36;
     }
     [self viewHidden];
     _cuurrentAsset = nil;
+    if (self.navigationController) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
 
 -(void) viewHidden{
@@ -1316,6 +1322,9 @@ static NSInteger const kCoordCount = 36;
 }
 #pragma mark -SpecificationAlbumViewControllerDelegate
 -(void) hiddenViewAppearWithAsset:(SpecificationAsset*)asset{
+    if (self.navigationController) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     _cuurrentAsset = asset;
     _textField.text = asset.name;
     _isfront = asset.isFront;
@@ -1326,6 +1335,9 @@ static NSInteger const kCoordCount = 36;
     
     if(!_isfront){
         RY=-95*M_PI/180;
+        [self updateScene];
+    }else{
+        RY=0;
         [self updateScene];
     }
     NSString *toolsSavePath = [_cuurrentAsset.modelFile stringByAppendingPathComponent:@"toolsData"];
@@ -1502,25 +1514,36 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.texture2d0.enabled = GL_TRUE;
 //    self.baseEffect.texture2d0.name = _textureInfo.name;
     
+    self.baseEffect = [[GLKBaseEffect alloc] init];
+//    self.baseEffect.texture2d0.enabled = GL_TRUE;
+//    self.baseEffect.texture2d0.name = _textureInfo.name;
+    
+    self.baseEffect = [[GLKBaseEffect alloc] init];
+//    self.baseEffect.texture2d0.enabled = GL_TRUE;
+//    self.baseEffect.texture2d0.name = _textureInfo.name;
+    
     self.baseEffect.light0.enabled = YES; // 开启光照效果
-    self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
-    self.baseEffect.light0.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
-    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1);// 开启漫反射
+//    self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
+//    self.baseEffect.light0.specularColor=GLKVector4Make(1.0f, 1.0f, 1.0f, 1);
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);// 开启漫反射
 //    self.baseEffect.light0.position = GLKVector4Make(-0.5f,2.0f, -0.5f,1); // 光源位置
-    self.baseEffect.light0.position = GLKVector4Make(ROC_X+100, ROC_Y, ROC_Z-100, 1);
+    self.baseEffect.light0.position = GLKVector4Make(ROC_X-2000, ROC_Y+2000, ROC_Z+1000, 1);
+    
     self.baseEffect.light1.enabled = YES; // 开启光照效果
-    self.baseEffect.light1.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light1.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);// 开启漫反射
-//    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light1.position = GLKVector4Make(ROC_X, ROC_Y, ROC_Z+100, 1);
+//    self.baseEffect.light1.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
+    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
+    self.baseEffect.light1.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
+    self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
+////    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
+    self.baseEffect.light1.position = GLKVector4Make(ROC_X+2000, ROC_Y, ROC_Z-1000, 1);
     
     self.baseEffect.light2.enabled = YES; // 开启光照效果
-    self.baseEffect.light2.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light2.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 0.5);// 开启漫反射
+    self.baseEffect.light2.ambientColor =GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);
+//    self.baseEffect.light2.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
+//    self.baseEffect.light2.spotDirection=GLKVector3Make(1,0,0);
+    self.baseEffect.light2.diffuseColor = GLKVector4Make(1.2f, 1.2f, 1.2f, 1.0);// 开启漫反射
 //    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light2.position = GLKVector4Make(ROC_X-100, ROC_Y, ROC_Z-100, 1);
+    self.baseEffect.light2.position = GLKVector4Make(ROC_X, ROC_Y+1000, ROC_Z+1000, 1);
 
     //铜
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.212500, 0.127500, 0.054000, 1.000000);
@@ -1528,10 +1551,21 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.material.specularColor=GLKVector4Make(0.393548, 0.271906, 0.166721, 1.000000);
 //    self.baseEffect.material.shininess= 25.600000;
 //    银色
-    self.baseEffect.material.ambientColor=GLKVector4Make(0.192250, 0.192250, 0.192250, 1.000000);
-    self.baseEffect.material.diffuseColor=GLKVector4Make(0.507540, 0.507540, 0.507540, 1.000000);
-    self.baseEffect.material.specularColor=GLKVector4Make( 0.508273, 0.508273, 0.508273, 1.000000);
-    self.baseEffect.material.shininess= 51.200001;
+//    self.baseEffect.material.ambientColor=GLKVector4Make(0.192250, 0.192250, 0.192250, 1.000000);
+//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.507540, 0.507540, 0.507540, 1.000000);
+//    self.baseEffect.material.specularColor=GLKVector4Make( 0.508273, 0.508273, 0.508273, 1.000000);
+//    self.baseEffect.material.shininess= 51.200001;
+    
+//    self.baseEffect.material.ambientColor=GLKVector4Make(0.502250, 0.502250, 0.502250, 1.000000);
+//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.307540, 0.307540, 0.307540, 1.000000);
+//    self.baseEffect.material.specularColor=GLKVector4Make(0.308273, 0.308273, 0.308273, 1.000000);
+//    self.baseEffect.material.shininess= 51.200001;
+    self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
+    self.baseEffect.material.diffuseColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.specularColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+
+    // 设置反射强度
+    self.baseEffect.material.shininess = 0.5f;
 
 }
 -(void)addBackground{

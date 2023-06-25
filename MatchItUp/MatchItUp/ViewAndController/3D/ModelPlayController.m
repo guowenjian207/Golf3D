@@ -260,25 +260,25 @@ static NSInteger const kCoordCount = 36;
     self.baseEffect.light0.enabled = YES; // 开启光照效果
 //    self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
 //    self.baseEffect.light0.specularColor=GLKVector4Make(1.0f, 1.0f, 1.0f, 1);
-    self.baseEffect.light0.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f,1);// 开启漫反射
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);// 开启漫反射
 //    self.baseEffect.light0.position = GLKVector4Make(-0.5f,2.0f, -0.5f,1); // 光源位置
     self.baseEffect.light0.position = GLKVector4Make(ROC_X-2000, ROC_Y+2000, ROC_Z+1000, 1);
     
     self.baseEffect.light1.enabled = YES; // 开启光照效果
 //    self.baseEffect.light1.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
     self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
-    self.baseEffect.light1.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 0);// 开启漫反射
+    self.baseEffect.light1.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
     self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
 ////    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light1.position = GLKVector4Make(ROC_X+1000, ROC_Y, ROC_Z-1000, 1);
+    self.baseEffect.light1.position = GLKVector4Make(ROC_X+2000, ROC_Y, ROC_Z-1000, 1);
     
     self.baseEffect.light2.enabled = YES; // 开启光照效果
     self.baseEffect.light2.ambientColor =GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);
-    self.baseEffect.light2.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
-    self.baseEffect.light2.spotDirection=GLKVector3Make(1,0,0);
-//    self.baseEffect.light2.diffuseColor = GLKVector4Make(0.0f, 0.0f, 0.0f, 0.5);// 开启漫反射
+//    self.baseEffect.light2.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
+//    self.baseEffect.light2.spotDirection=GLKVector3Make(1,0,0);
+    self.baseEffect.light2.diffuseColor = GLKVector4Make(1.2f, 1.2f, 1.2f, 1.0);// 开启漫反射
 //    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light2.position = GLKVector4Make(ROC_X-1000, ROC_Y, ROC_Z-1000, 1);
+    self.baseEffect.light2.position = GLKVector4Make(ROC_X, ROC_Y+1000, ROC_Z+1000, 1);
 
 //    //铜
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.212500, 0.127500, 0.054000, 1.000000);
@@ -295,18 +295,18 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.material.diffuseColor=GLKVector4Make(0.507540, 0.507540, 0.507540, 1.000000);
 //    self.baseEffect.material.specularColor=GLKVector4Make( 0.508273, 0.508273, 0.508273, 1.000000);
 //    self.baseEffect.material.shininess= 51.200001;
-    self.baseEffect.material.ambientColor=GLKVector4Make(0.502250, 0.502250, 0.502250, 1.000000);
-    self.baseEffect.material.diffuseColor=GLKVector4Make(0.307540, 0.307540, 0.307540, 1.000000);
-    self.baseEffect.material.specularColor=GLKVector4Make(0.308273, 0.308273, 0.308273, 1.000000);
-    self.baseEffect.material.shininess= 51.200001;
+//    self.baseEffect.material.ambientColor=GLKVector4Make(0.502250, 0.502250, 0.502250, 1.000000);
+//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.307540, 0.307540, 0.307540, 1.000000);
+//    self.baseEffect.material.specularColor=GLKVector4Make(0.308273, 0.308273, 0.308273, 1.000000);
+//    self.baseEffect.material.shininess= 51.200001;
     
 //    self.baseEffect.material.colorMaterialEnabled = GL_TRUE;
-//    self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
-//    self.baseEffect.material.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-//    self.baseEffect.material.specularColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
-//
-//    // 设置反射强度
-//    self.baseEffect.material.shininess = 50.0f;
+    self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
+    self.baseEffect.material.diffuseColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.specularColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+
+    // 设置反射强度
+    self.baseEffect.material.shininess = 0.5f;
     //珍珠
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.250000, 0.207250, 0.207250, 0.922000);
 //    self.baseEffect.material.diffuseColor=GLKVector4Make(1.000000, 0.829000, 0.829000, 0.922000);
