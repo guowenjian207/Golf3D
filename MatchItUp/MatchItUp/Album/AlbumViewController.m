@@ -368,10 +368,10 @@
     if(_videos[indexpath.row].video.isEdite){
         if([cell.stateChange isSelected]){
             [cell.stateChange setSelected:NO];
-            [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeCustomView title:@"指标启用" icon:[UIImage imageNamed:@"complete"] autoHideAfterDelayIfNeed:@1];
+            [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeCustomView title:@"模型启用" icon:[UIImage imageNamed:@"complete"] autoHideAfterDelayIfNeed:@1];
         }else{
             [cell.stateChange setSelected:YES];
-            [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeCustomView title:@"指标停用" icon:[UIImage imageNamed:@"complete"] autoHideAfterDelayIfNeed:@1];
+            [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeCustomView title:@"模型停用" icon:[UIImage imageNamed:@"complete"] autoHideAfterDelayIfNeed:@1];
         }
         
         NSLog(@"设备图片按钮被点击:%ld        %ld",(long)indexpath.section,(long)indexpath.row);

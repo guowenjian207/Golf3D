@@ -32,6 +32,9 @@
     NSMutableDictionary *zhiyeModelData;
     
     NSMutableArray *frameIndexArray;
+    
+    bool isSelect;
+    NSIndexPath *preIndexPath;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame andisFront:(BOOL)isFrontParam andVideoURL:(NSURL *)videoURL andFrameIndexArray:(NSMutableArray*)frameIndexArray{
@@ -101,6 +104,9 @@
         }
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hasChangeToolColor:) name:@"specToolColorChange" object:nil];
+        
+        isSelect = YES;
+        preIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     }
     return  self;
 }
@@ -151,6 +157,14 @@
         return cell;
     }else{
         FrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"spec" forIndexPath:indexPath];
+        [cell selectCell];
+        if(indexPath.row == 0 && isSelect){
+            [cell sesetting];
+            isSelect = NO;
+        }else if(isSelect){
+            [cell sesetting];
+            isSelect = NO;
+        }
         SpecificationAsset *asset = nil;
         asset = models[indexPath.row];
         [cell setFrameImg:asset.cover withRate:0];
@@ -161,14 +175,15 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView==specCollectionView){
         FrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"spec" forIndexPath:indexPath];
-        [cell selectCell];
+        isSelect = YES;
         [specCollectionView reloadItemsAtIndexPaths:@[indexPath]];
         // 获取之前选中的cell
 //        NSIndexPath *previousSelectedIndexPath = [[collectionView indexPathsForSelectedItems] firstObject];
 //        FrameCollectionViewCell *previousSelectedCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"spec" forIndexPath:previousSelectedIndexPath];
-//        [previousSelectedCell sesetting];
-//        [specCollectionView reloadItemsAtIndexPaths:@[previousSelectedIndexPath]];
-        cell.highlighted = YES;
+        [specCollectionView reloadItemsAtIndexPaths:@[preIndexPath]];
+        
+        preIndexPath = indexPath;
+        
         [showCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }
 }

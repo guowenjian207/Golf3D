@@ -233,7 +233,7 @@ static NSInteger const kCoordCount = 36;
 }
 // 配置纹理
 - (void)setupTexture{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi" ofType:@"jpg"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi4" ofType:@"jpg"];
 
      //初始化纹理
     NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
@@ -260,17 +260,17 @@ static NSInteger const kCoordCount = 36;
     self.baseEffect.light0.enabled = YES; // 开启光照效果
 //    self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
 //    self.baseEffect.light0.specularColor=GLKVector4Make(1.0f, 1.0f, 1.0f, 1);
-    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);// 开启漫反射
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
 //    self.baseEffect.light0.position = GLKVector4Make(-0.5f,2.0f, -0.5f,1); // 光源位置
-    self.baseEffect.light0.position = GLKVector4Make(ROC_X-2000, ROC_Y+2000, ROC_Z+1000, 1);
-    
+    self.baseEffect.light0.position = GLKVector4Make(-2000, 0, 1000, 1);
+
     self.baseEffect.light1.enabled = YES; // 开启光照效果
 //    self.baseEffect.light1.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
+//    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
     self.baseEffect.light1.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
-    self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
+//    self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
 ////    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light1.position = GLKVector4Make(ROC_X+2000, ROC_Y, ROC_Z-1000, 1);
+    self.baseEffect.light1.position = GLKVector4Make(2000, 0, -1000, 1);
     
     self.baseEffect.light2.enabled = YES; // 开启光照效果
     self.baseEffect.light2.ambientColor =GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);
@@ -278,7 +278,7 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.light2.spotDirection=GLKVector3Make(1,0,0);
     self.baseEffect.light2.diffuseColor = GLKVector4Make(1.2f, 1.2f, 1.2f, 1.0);// 开启漫反射
 //    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light2.position = GLKVector4Make(ROC_X, ROC_Y+1000, ROC_Z+1000, 1);
+    self.baseEffect.light2.position = GLKVector4Make(0, 1000, 0, 1);
 
 //    //铜
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.212500, 0.127500, 0.054000, 1.000000);
@@ -302,11 +302,12 @@ static NSInteger const kCoordCount = 36;
     
 //    self.baseEffect.material.colorMaterialEnabled = GL_TRUE;
     self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
-    self.baseEffect.material.diffuseColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.diffuseColor = GLKVector4Make(0.2f, 0.2f, 0.2f, 1.0f);
     self.baseEffect.material.specularColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.emissiveColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
 
     // 设置反射强度
-    self.baseEffect.material.shininess = 0.5f;
+    self.baseEffect.material.shininess = 20.0f;
     //珍珠
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.250000, 0.207250, 0.207250, 0.922000);
 //    self.baseEffect.material.diffuseColor=GLKVector4Make(1.000000, 0.829000, 0.829000, 0.922000);

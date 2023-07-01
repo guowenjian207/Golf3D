@@ -189,6 +189,7 @@
 		E0CF0ED629AF64FF00C1CF82 /* oc in Resources */ = {isa = PBXBuildFile; fileRef = E0CF0ED529AF64FF00C1CF82 /* oc */; };
 		E0D1B53429B86F9400ED91C5 /* SpecificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D1B53329B86F9400ED91C5 /* SpecificationViewController.m */; };
 		E0D1B53729BB0ECC00ED91C5 /* SpecificationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D1B53629BB0ECC00ED91C5 /* SpecificationTool.m */; };
+		E0D204812A49D1AF00F332AC /* mengpi4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0D204802A49D1AF00F332AC /* mengpi4.jpg */; };
 		E0FB18E529F3D010006F2EC6 /* mengpi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0FB18E429F3D00F006F2EC6 /* mengpi.jpg */; };
 		E0FB19502A04F14E006F2EC6 /* VideoAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FB194C2A04F14E006F2EC6 /* VideoAnalysisViewController.m */; };
 		E0FB19512A04F14E006F2EC6 /* indexvideoAnalysisCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FB194D2A04F14E006F2EC6 /* indexvideoAnalysisCollectionViewCell.m */; };
@@ -443,6 +444,7 @@
 		E0D1B53329B86F9400ED91C5 /* SpecificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecificationViewController.m; sourceTree = "<group>"; };
 		E0D1B53529BB0ECC00ED91C5 /* SpecificationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecificationTool.h; sourceTree = "<group>"; };
 		E0D1B53629BB0ECC00ED91C5 /* SpecificationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecificationTool.m; sourceTree = "<group>"; };
+		E0D204802A49D1AF00F332AC /* mengpi4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mengpi4.jpg; sourceTree = "<group>"; };
 		E0FB18E429F3D00F006F2EC6 /* mengpi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mengpi.jpg; sourceTree = "<group>"; };
 		E0FB194C2A04F14E006F2EC6 /* VideoAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoAnalysisViewController.m; sourceTree = "<group>"; };
 		E0FB194D2A04F14E006F2EC6 /* indexvideoAnalysisCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = indexvideoAnalysisCollectionViewCell.m; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 		E0CF06CE29ED07A5002321F0 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
+				E0D204802A49D1AF00F332AC /* mengpi4.jpg */,
 				E0FB18E429F3D00F006F2EC6 /* mengpi.jpg */,
 				E0B6D4BB2A3B57F9009CF377 /* 3D界面背景B01.jpg */,
 				E0B6D4C02A3B5BA5009CF377 /* 3D界面背景B02.jpg */,
@@ -1150,6 +1153,7 @@
 				D6AEFF9B286B5373003F0D27 /* PrincipalLineSide.plist in Resources */,
 				E0B6D4BE2A3B57F9009CF377 /* 3D界面背景B04.jpg in Resources */,
 				E0B6D4BF2A3B57F9009CF377 /* 3D界面背景B01.jpg in Resources */,
+				E0D204812A49D1AF00F332AC /* mengpi4.jpg in Resources */,
 				B938ABA8259588C600A7FF05 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1614,9 +1618,9 @@
 				);
 				IBSC_FLATTEN_NIBS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MatchItUp/Supported/debug.Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MatchItUp;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swing Pro";
 				INFOPLIST_KEY_NSCameraUsageDescription = "录制挥杆视频";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " position use";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "获取位置";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "画布操作录音";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "向系统相册中添加挥杆视频";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "获取系统相册中的挥杆视频";
@@ -1635,7 +1639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwj.MatchItUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1669,9 +1673,9 @@
 				);
 				IBSC_FLATTEN_NIBS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MatchItUp/Supported/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = MatchItUp;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swing Pro";
 				INFOPLIST_KEY_NSCameraUsageDescription = "录制挥杆视频";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " position use";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "获取位置";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "画布操作录音";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "向系统相册中添加挥杆视频";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "获取系统相册中的挥杆视频";
@@ -1690,7 +1694,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwj.MatchItUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -703,7 +703,7 @@
             angleLabel1.center = point2;
         }
         if([tool.name isEqual:@"Shaft_Line"]){
-            angleLabel1.center = point2;
+            angleLabel1.center = point1;
         }
         tool.angleLabel1.textColor = tool.color;
         [tool.angleLabel1 setFont:[UIFont systemFontOfSize:15.0]];
@@ -916,6 +916,11 @@
     SpecificationTool *nearestTool = nil;
     nearestTool = [self.delegate chooseNearestSpecificationToolWithX:x0];
     [self deselectCurrentTool];
+    if(currentTool != nil){
+        [currentTool.toolLayer removeFromSuperlayer];
+        [currentTool.toolPath removeAllPoints];
+        [currentTool.angleLabel1 removeFromSuperview];
+    }
     tempTool = [nearestTool copy];
     currentTool = [nearestTool copy];
     [self drawCanvasWithTool:currentTool];

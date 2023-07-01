@@ -482,7 +482,7 @@ static NSInteger const kCoordCount = 36;
     CGPoint point = [self worldToScreen:v];
     SpecificationTool *glktool = [[SpecificationTool alloc]intiLineWithPointA:point];
     for (SpecificationTool *tool in _canvasToolArrayInGlk) {
-        if(tool.type == glktool.type){
+        if(tool.name == glktool.name){
             return;
         }
     }
@@ -513,7 +513,7 @@ static NSInteger const kCoordCount = 36;
     SpecificationTool *glktool = [[SpecificationTool alloc]intiHeadPositionWithPointA:pointA andPointB:pointB andandPointC:pointC];
     
     for (SpecificationTool *tool in _canvasToolArrayInGlk) {
-        if(tool.type == glktool.type){
+        if(tool.name == glktool.name){
             return;
         }
     }
@@ -653,7 +653,7 @@ static NSInteger const kCoordCount = 36;
     SpecificationTool *glktool = [[SpecificationTool alloc]intiLowBodyPositionWithPointA:pointA andPointB:pointB andPointC:pointC andPointD:pointD];
     
     for (SpecificationTool *tool in _canvasToolArrayInGlk) {
-        if(tool.type == glktool.type){
+        if(tool.name == glktool.name){
             return;
         }
     }
@@ -799,13 +799,13 @@ static NSInteger const kCoordCount = 36;
             tmpImgView.frame = CGRectMake(0, 0, (self.view.frame.size.width - 18) / 6, (self.view.frame.size.width - 18) / 24*5);
             
             
-            UIGraphicsBeginImageContextWithOptions(self.glkView.bounds.size, NO, 0.0f);
-            NSLog(@"%f,%f",self.glkView.bounds.size.width,self.glkView.bounds.size.height);
-//            [self.glkView.layer renderInContext:UIGraphicsGetCurrentContext()];
-            [self.glkView drawViewHierarchyInRect:self.glkView.bounds afterScreenUpdates:YES];
-            UIImage * resultImg = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-//            UIImage* resultImg = self.glkView.snapshot;
+//            UIGraphicsBeginImageContextWithOptions(self.glkView.bounds.size, NO, 0.0f);
+//            NSLog(@"%f,%f",self.glkView.bounds.size.width,self.glkView.bounds.size.height);
+////            [self.glkView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//            [self.glkView drawViewHierarchyInRect:self.glkView.bounds afterScreenUpdates:YES];
+//            UIImage * resultImg = UIGraphicsGetImageFromCurrentImageContext();
+//            UIGraphicsEndImageContext();
+            UIImage* resultImg = self.glkView.snapshot;
             tmpImgView.image = resultImg;
             CGPoint point = [recognizer locationInView:self.view];
             tmpImgView.center = point;
@@ -1525,17 +1525,17 @@ static NSInteger const kCoordCount = 36;
     self.baseEffect.light0.enabled = YES; // 开启光照效果
 //    self.baseEffect.light0.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 1);
 //    self.baseEffect.light0.specularColor=GLKVector4Make(1.0f, 1.0f, 1.0f, 1);
-    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);// 开启漫反射
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
 //    self.baseEffect.light0.position = GLKVector4Make(-0.5f,2.0f, -0.5f,1); // 光源位置
-    self.baseEffect.light0.position = GLKVector4Make(ROC_X-2000, ROC_Y+2000, ROC_Z+1000, 1);
-    
+    self.baseEffect.light0.position = GLKVector4Make(-2000, 0, 1000, 1);
+
     self.baseEffect.light1.enabled = YES; // 开启光照效果
 //    self.baseEffect.light1.ambientColor =GLKVector4Make(0.5f, 0.5f, 0.5f, 0.5);
-    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
+//    self.baseEffect.light1.specularColor=GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0);
     self.baseEffect.light1.diffuseColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);// 开启漫反射
-    self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
+//    self.baseEffect.light1.spotDirection=GLKVector3Make(-1,0,0);
 ////    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light1.position = GLKVector4Make(ROC_X+2000, ROC_Y, ROC_Z-1000, 1);
+    self.baseEffect.light1.position = GLKVector4Make(2000, 0, -1000, 1);
     
     self.baseEffect.light2.enabled = YES; // 开启光照效果
     self.baseEffect.light2.ambientColor =GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0);
@@ -1543,7 +1543,7 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.light2.spotDirection=GLKVector3Make(1,0,0);
     self.baseEffect.light2.diffuseColor = GLKVector4Make(1.2f, 1.2f, 1.2f, 1.0);// 开启漫反射
 //    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
-    self.baseEffect.light2.position = GLKVector4Make(ROC_X, ROC_Y+1000, ROC_Z+1000, 1);
+    self.baseEffect.light2.position = GLKVector4Make(0, 1000, 0, 1);
 
     //铜
 //    self.baseEffect.material.ambientColor=GLKVector4Make(0.212500, 0.127500, 0.054000, 1.000000);
@@ -1561,11 +1561,12 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.material.specularColor=GLKVector4Make(0.308273, 0.308273, 0.308273, 1.000000);
 //    self.baseEffect.material.shininess= 51.200001;
     self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
-    self.baseEffect.material.diffuseColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.diffuseColor = GLKVector4Make(0.2f, 0.2f, 0.2f, 1.0f);
     self.baseEffect.material.specularColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
+    self.baseEffect.material.emissiveColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
 
     // 设置反射强度
-    self.baseEffect.material.shininess = 0.5f;
+    self.baseEffect.material.shininess = 20.0f;
 
 }
 -(void)addBackground{
