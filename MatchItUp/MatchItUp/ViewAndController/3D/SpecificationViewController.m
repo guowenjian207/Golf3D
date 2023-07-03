@@ -594,7 +594,7 @@ static NSInteger const kCoordCount = 36;
     CGPoint pointA = [self worldToScreen:v1];
     GLKVector4 v2=self.gl.shaftLine[1][_frame];
     CGPoint pointB = [self worldToScreen:v2];
-    SpecificationTool *glktool = [[SpecificationTool alloc]intiShaftLineWithPointA:pointA andPointB:pointB];
+    SpecificationTool *glktool = [[SpecificationTool alloc]intiShaftLineWithPointA:pointB andPointB:pointA];
     
     for (SpecificationTool *tool in _canvasToolArrayInGlk) {
         if(tool.name == glktool.name){

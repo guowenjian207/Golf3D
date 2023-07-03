@@ -308,9 +308,7 @@
 }
 
 - (void) drawLine{
-    if(_currentPart == Head){
-        [self.delegate headLine];
-    }else if (_currentPart == LeadForearm){
+    if (_currentPart == LeadForearm){
         [self.delegate leadForearmLine];
     }else if (_currentPart == Shaft){
         [self.delegate shaftLine];

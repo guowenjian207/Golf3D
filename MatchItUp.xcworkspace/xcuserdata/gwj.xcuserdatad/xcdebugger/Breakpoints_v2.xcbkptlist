@@ -2093,8 +2093,8 @@
             filePath = "MatchItUp/MatchItUp/ViewAndController/3D/SpecificationAlbumViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
             landmarkName = "-doTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2109,8 +2109,8 @@
             filePath = "MatchItUp/MatchItUp/ViewAndController/3D/SpecificationAlbumViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "-computeDisWith:andP1:"
             landmarkType = "7">
          </BreakpointContent>
