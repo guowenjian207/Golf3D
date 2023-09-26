@@ -639,6 +639,49 @@ SingleM(Manager)
         [self->fileManager removeItemAtPath:[NSString stringWithFormat:@"%@%@", self->globalVar.specificationDocDir, modelFile] error:nil];
     });
 }
+
+- (void)firstInitSpecifications{
+    for(int i=1;i<13;i++){
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"zhibiaomoban%d",i]];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        
+        NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"zhibiaomoban%d.png",i]];
+        BOOL isSuccess = [imageData writeToFile:filePath atomically:YES];
+        if(isSuccess){
+            NSLog(@"%@",[NSString stringWithFormat:@"zhibiaomoban%d",i]);
+            [coreDataManager addSpecification:[NSURL fileURLWithPath:filePath] withCanDelete:NO andISFront:i<6 completion:^(SpecificationModel * _Nonnull newModel) {
+                NSLog(@"%@",[NSString stringWithFormat:@"zhibiaomoban%d 成功",i]);
+                NSString *toolPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingFormat:@"/specificationDocDir/zhibiaomoban%d/toolsData",i];
+                NSMutableArray *tmpToolsArray = [NSKeyedUnarchiver unarchiveObjectWithFile:toolPath];
+                NSString *modlePath = [GlobalVar.sharedInstance.specificationDocDir stringByAppendingString:newModel.modelFile];
+                NSString *toolsSavePath = [modlePath stringByAppendingPathComponent:@"toolsData"];
+                if ([NSKeyedArchiver archiveRootObject:tmpToolsArray toFile:toolsSavePath]) {
+                    NSLog(@"tool写入成功");
+                }
+                else {
+                    NSLog(@"tool写入失败");
+                }
+                NSString *frameIndexPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingFormat:@"/specificationDocDir/zhibiaomoban%d/frameIndex",i];
+                NSMutableArray *frameIndexArray = [NSMutableArray arrayWithContentsOfFile:frameIndexPath];
+                NSString *frameIdxSavePath = [modlePath stringByAppendingPathComponent:@"frameIndex"];
+                if ([frameIndexArray writeToFile:frameIdxSavePath atomically:NO]) {
+                    NSLog(@"指标模型图片写入成功");
+                }
+                else {
+                    NSLog(@"指标模型图片写入失败");
+                }
+                NSString *jsonPath =  [[[NSBundle mainBundle] resourcePath] stringByAppendingFormat:@"/specificationDocDir/zhibiaomoban%d/jsonData.json",i];
+                NSString *jsonSavePath = [modlePath stringByAppendingPathComponent:@"jsonData.json"];
+                NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+                if( [jsonData writeToFile:jsonSavePath atomically:YES]){
+                    NSLog(@"json写入成功");
+                }else{
+                    NSLog(@"json写入失败");
+                }
+            }];
+        }
+    }
+}
 + (BOOL)resultExistsWithId:(NSString*)videoId option:(NSUInteger)option {
     NSString *path;
     switch (option) {

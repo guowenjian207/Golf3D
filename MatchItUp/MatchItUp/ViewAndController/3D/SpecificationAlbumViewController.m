@@ -11,6 +11,7 @@
 #import "ZHPopupViewManager.h"
 #import "SpecificationAlbumCollectionViewCell.h"
 #import "SpecificationDataModel.h"
+#import "ZHFileManager.h"
 @interface SpecificationAlbumViewController()<UIImagePickerControllerDelegate>{
     
     GlobalVar *globalVar;
@@ -52,6 +53,15 @@
 }
 
 - (void)getVideos{
+    //首次初始化 指标模版数据
+    NSString *isFirst = [[NSUserDefaults standardUserDefaults] stringForKey:@"zhibiaomoban"];
+    if (isFirst == nil){
+        NSLog(@"指标模版首次安装");
+        
+        [NSUserDefaults.standardUserDefaults setObject:@"yes" forKey:@"zhibiaomoban"];
+    }else{
+        NSLog(@"指标模版已初始化");
+    }
     self.models = [[SpecificationDataModel alloc] initWithSpecificatins:[[CoreDataManager sharedManager] getSpecification]].assets;
 //    if (self.videos.count>0){
 //        [NetworkingManager.sharedNetworkingManager uploadSS:self.videos[0]];

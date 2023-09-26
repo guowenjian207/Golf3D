@@ -73,6 +73,7 @@ SingleH(Manager)
 -(NSArray *) getSpecificationOfUsing;
 -(NSArray *) getSpecificationOfUsingWith:(NSArray*)keys;
 -(void)addSpecification:(NSURL*) picURL completion:(void (^)(SpecificationModel * ))completionBlock;
+-(void)addSpecification:(NSURL*) picURL withCanDelete:(BOOL)canDelete andISFront:(BOOL)isFront completion:(void (^)(SpecificationModel * ))completionBlock;
 - (void)deleteSpecification:(SpecificationModel *)sr;
 - (void)updataSpecificationIsEdite:(BOOL)isEdite andIsFront:(BOOL)isFront andName:(NSString*)name withUuid:(NSString*) uuid;
 - (void)updataSpecificationState:(BOOL)state  withUuid:(NSString*) uuid;

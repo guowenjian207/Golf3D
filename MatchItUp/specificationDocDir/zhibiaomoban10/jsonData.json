@@ -1,0 +1,45 @@
+[
+  {
+    "frame_id" : 0,
+    "lines" : [
+      {
+        "line_name" : "Elbow_Hosel_Line"
+      }
+    ]
+  },
+  {
+    "frame_id" : 5,
+    "lines" : [
+      {
+        "line_name" : "Shaft_Line"
+      }
+    ]
+  },
+  {
+    "frame_id" : 6,
+    "lines" : [
+      {
+        "line_name" : "Shaft_Line"
+      }
+    ]
+  },
+  {
+    "frame_id" : 8,
+    "lines" : [
+      {
+        "line_name" : "Shaft_Line"
+      }
+    ]
+  },
+  {
+    "frame_id" : 11,
+    "lines" : [
+      {
+        "line_name" : "Shaft_Line"
+      }
+    ]
+  },
+  {
+
+  }
+]

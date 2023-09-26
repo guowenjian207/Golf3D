@@ -45,6 +45,8 @@ SingleH(Manager)
 + (BOOL)resultExistsWithId:(NSString*)videoId option:(NSUInteger)option;
 
 - (void)mergeVideosToOne:(NSArray*)array;
+
+- (void)firstInitSpecifications;
 @end
 
 NS_ASSUME_NONNULL_END

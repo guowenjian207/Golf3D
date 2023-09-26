@@ -16,6 +16,7 @@
 #import "SpecificationAsset.h"
 #import "SpecificationTool.h"
 #import "CoreDataManager.h"
+#import "ZHFileManager.h"
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 @end
 
@@ -72,6 +73,7 @@
         }
         [NSUserDefaults.standardUserDefaults setObject:currentBundleVersion forKey:@"bundleVersion"];
         [NSUserDefaults.standardUserDefaults synchronize];
+        [ZHFileManager.sharedManager firstInitSpecifications];
     }
     NSString *path = NSTemporaryDirectory();
     NSLog(@"temp大小:%@",[ClearCacheTool getCacheSizeWithFilePath:path]);

@@ -601,20 +601,22 @@ SingleM(Manager)
         }];
     }];
 }
--(void)addSpecification:(NSURL*) picURL withCanDelete:(BOOL)canDelete completion:(void (^)(SpecificationModel * ))completionBlock{
+-(void)addSpecification:(NSURL*) picURL withCanDelete:(BOOL)canDelete andISFront:(BOOL)isFront completion:(void (^)(SpecificationModel * ))completionBlock{
     [ZHFileManager.sharedManager copySpecification:picURL completion:^(BOOL success, NSError * _Nonnull error, NSString * _Nonnull fileName) {
         if(fileName == nil){
             return;
         }
-        NSManagedObjectContext *context = [self createPrivateMOC];
+        NSManagedObjectContext *context = [self mainMOC];
         [context performBlock: ^{
             SpecificationModel *newModel = [NSEntityDescription insertNewObjectForEntityForName:@"SpecificationModel" inManagedObjectContext:context];
             newModel.modelFile =[[fileName lastPathComponent]stringByDeletingPathExtension];
             newModel.shotPicFile = fileName;
             newModel.canDelete = canDelete;
-            newModel.isFront = YES;
+            newModel.isFront = isFront;
             newModel.uuid = NSUUID.UUID.UUIDString;
             newModel.creationTime = [NSDate date];
+            newModel.isEdit = YES;
+            newModel.state = YES;
             [self saveContext:context];
             if (completionBlock){
                 completionBlock(newModel);

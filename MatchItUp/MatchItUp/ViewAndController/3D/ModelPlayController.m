@@ -236,10 +236,10 @@ static NSInteger const kCoordCount = 36;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi4" ofType:@"jpg"];
 
      //初始化纹理
-    NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
-    _textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
-
-    NSLog(@"textureInfo.name: %d", _textureInfo.name);
+//    NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
+//    _textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
+//
+//    NSLog(@"textureInfo.name: %d", _textureInfo.name);
     
     
 //    self.exEffect =  [[GLKBaseEffect alloc] init];
