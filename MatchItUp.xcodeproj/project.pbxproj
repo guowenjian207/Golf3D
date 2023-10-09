@@ -164,6 +164,8 @@
 		E060B22A293F4F3F00766179 /* PoseNetMobileNet100S8FP16.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = E060B229293F4F3F00766179 /* PoseNetMobileNet100S8FP16.mlpackage */; };
 		E060B22C293F4FBC00766179 /* PoseNetMobileNet075S16FP16.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = E060B22B293F4FBC00766179 /* PoseNetMobileNet075S16FP16.mlpackage */; };
 		E060F14E2AC2E2F8001354CC /* specificationDocDir in Resources */ = {isa = PBXBuildFile; fileRef = E060F14D2AC2E2F8001354CC /* specificationDocDir */; };
+		E060F1502AD3E5AD001354CC /* swing pro使用手册.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E060F14F2AD3E5AD001354CC /* swing pro使用手册.pdf */; };
+		E060F1592AD4054D001354CC /* example1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E060F1582AD404E6001354CC /* example1.mp4 */; };
 		E06D153629CAB6D3004B2FA3 /* SpecificationAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = E06D153529CAB6D3004B2FA3 /* SpecificationAsset.m */; };
 		E06D153929CB058F004B2FA3 /* SpecificationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E06D153829CB058F004B2FA3 /* SpecificationDataModel.m */; };
 		E06D153C29CD981C004B2FA3 /* SpecificationFrameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E06D153B29CD981C004B2FA3 /* SpecificationFrameCell.m */; };
@@ -402,6 +404,8 @@
 		E060B229293F4F3F00766179 /* PoseNetMobileNet100S8FP16.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PoseNetMobileNet100S8FP16.mlpackage; sourceTree = "<group>"; };
 		E060B22B293F4FBC00766179 /* PoseNetMobileNet075S16FP16.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PoseNetMobileNet075S16FP16.mlpackage; sourceTree = "<group>"; };
 		E060F14D2AC2E2F8001354CC /* specificationDocDir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = specificationDocDir; sourceTree = "<group>"; };
+		E060F14F2AD3E5AD001354CC /* swing pro使用手册.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "swing pro使用手册.pdf"; sourceTree = "<group>"; };
+		E060F1582AD404E6001354CC /* example1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example1.mp4; sourceTree = "<group>"; };
 		E06D153429CAB6D3004B2FA3 /* SpecificationAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecificationAsset.h; sourceTree = "<group>"; };
 		E06D153529CAB6D3004B2FA3 /* SpecificationAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecificationAsset.m; sourceTree = "<group>"; };
 		E06D153729CB058F004B2FA3 /* SpecificationDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecificationDataModel.h; sourceTree = "<group>"; };
@@ -546,6 +550,8 @@
 			children = (
 				D6EDD8C4280EA1AA00E0395E /* autoRecordEnd.mp3 */,
 				D63ECABB26E9C1020041C52B /* MatchItUp-使用说明文档.docx */,
+				E060F14F2AD3E5AD001354CC /* swing pro使用手册.pdf */,
+				E060F1582AD404E6001354CC /* example1.mp4 */,
 				B938AB97259588C500A7FF05 /* MatchItUp */,
 				B938ABB6259588C600A7FF05 /* MatchItUpTests */,
 				B938ABC1259588C600A7FF05 /* MatchItUpUITests */,
@@ -1132,6 +1138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E060F1592AD4054D001354CC /* example1.mp4 in Resources */,
 				E079AEC42A2CC02A0053FBEE /* PrincipalLine.plist in Resources */,
 				B9B857D82625359D0016BFCB /* ZHDoubleSlider.xcassets in Resources */,
 				D6AEFFA3286C4E22003F0D27 /* PlaneOutLine Front.plist in Resources */,
@@ -1148,6 +1155,7 @@
 				D65BF28A27E877D5002B8A27 /* PostureOutLine.plist in Resources */,
 				D6AEFF9B286B5373003F0D27 /* PrincipalLineSide.plist in Resources */,
 				E0B6D4BE2A3B57F9009CF377 /* 3D界面背景B04.jpg in Resources */,
+				E060F1502AD3E5AD001354CC /* swing pro使用手册.pdf in Resources */,
 				E0B6D4BF2A3B57F9009CF377 /* 3D界面背景B01.jpg in Resources */,
 				B938ABA8259588C600A7FF05 /* Assets.xcassets in Resources */,
 				E060F14E2AC2E2F8001354CC /* specificationDocDir in Resources */,

@@ -954,7 +954,7 @@
             }
         }
         float offsetY = kItemHeight;
-        if([currentTool.type isEqual:@"Line"] || [currentTool.type isEqual:@"ExternLineWithNode"] || [currentTool.type isEqual:@"SingleExternLineWithNode"] || [currentTool.type isEqual:@"Rect"]){
+        if([currentTool.type isEqual:@"Line"] || [currentTool.type isEqual:@"LineWithNode"] || [currentTool.type isEqual:@"ExternLineWithNode"] || [currentTool.type isEqual:@"SingleExternLineWithNode"] || [currentTool.type isEqual:@"Rect"]){
             point1 = CGPointMake(currentTool.x1.floatValue, currentTool.y1.floatValue);
             point1 = CGPointMake(point1.x * aveWidth + offsetX, point1.y * aveHeight + offsetY);
             point2 = CGPointMake(currentTool.x2.floatValue, currentTool.y2.floatValue);
@@ -1563,6 +1563,7 @@
     else {
         CGPoint point = [recognizer locationInView:_scrollView];
         [currentTool.toolLayer removeFromSuperlayer];
+        [currentTool.angleLabel1 removeFromSuperview];
         [self deselectCurrentTool];
         currentTool = nil;
         for(int i=0;i<6;i++){

@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)changeBackground;
 -(void)rotationModel;
 -(void)pushToSetting;
+-(void)QLPreviewControllerLoad;
 @end
 
 NS_ASSUME_NONNULL_END

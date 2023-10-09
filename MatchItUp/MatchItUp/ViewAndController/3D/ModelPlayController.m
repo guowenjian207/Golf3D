@@ -9,6 +9,7 @@
 #import "GolferModel.h"
 #import "ModelPlayView.h"
 #import <Masonry/Masonry.h>
+#import <QuickLook/QuickLook.h>
 
 typedef struct {
     GLKVector3 positionCoord;   //顶点坐标
@@ -19,7 +20,7 @@ typedef struct {
 // 顶点数
 static NSInteger const kCoordCount = 36;
 
-@interface ModelPlayController () <GLKViewDelegate,ModelPlayViewDelegate> {
+@interface ModelPlayController () <GLKViewDelegate,ModelPlayViewDelegate,QLPreviewControllerDataSource> {
     GLuint _bufferID;
     GLuint _exbufferID;
     GLuint _backbufferID;
@@ -133,6 +134,7 @@ static NSInteger const kCoordCount = 36;
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     _mp.topLabel.text = self.player_name;
+    [self.navigationController.navigationBar setHidden:YES];
     [self addDisplayLink];
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -157,10 +159,10 @@ static NSInteger const kCoordCount = 36;
     self.view.backgroundColor = [UIColor orangeColor];
     
     self._panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(viewRotation:)];
-    [self.view addGestureRecognizer:self._panGesture];
+    [self.mp addGestureRecognizer:self._panGesture];
     
     self._pinchGesture = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(viewZoom:)];
-    [self.view addGestureRecognizer:self._pinchGesture];
+    [self.mp addGestureRecognizer:self._pinchGesture];
 }
 // 配置基本信息
 - (void)setupConfig{
@@ -743,4 +745,19 @@ static NSInteger const kCoordCount = 36;
     pinchGesture.scale = 1.0;
 }
 
+#pragma mark -- QLPreviewController
+- (void)QLPreviewControllerLoad {
+    QLPreviewController *qlpVC = [[QLPreviewController alloc] init];
+    qlpVC.dataSource = self;
+    [self presentViewController:qlpVC animated:YES completion:nil];
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return 1;//需要显示文件的个数
+}
+- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"swing pro使用手册.pdf" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    return url;
+}
 @end

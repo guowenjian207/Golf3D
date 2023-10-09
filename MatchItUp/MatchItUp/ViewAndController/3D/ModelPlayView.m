@@ -168,6 +168,17 @@
                 make.height.mas_equalTo(40);
                 make.bottom.equalTo(self.bottomView.mas_top);
         }];
+        
+        UIButton *help = [[UIButton alloc]init];
+        [help addTarget:self action:@selector(viewDocumentation) forControlEvents:UIControlEventTouchUpInside];
+        [help setImage:[UIImage imageNamed:@"star"] forState:UIControlStateNormal];
+        [_topView addSubview:help];
+        
+        [help mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.mas_equalTo(30);
+            make.left.equalTo(_topView).offset(10);
+            make.top.equalTo(_topView);
+        }];
     }
     return self;
 }
@@ -212,5 +223,10 @@
     lineLayer.path = _apath.CGPath;
     [self.glkView.layer addSublayer:lineLayer];
     
+}
+
+- (void)viewDocumentation {
+    NSLog(@"ssss");
+    [self.delegate QLPreviewControllerLoad];
 }
 @end

@@ -681,6 +681,16 @@ SingleM(Manager)
             }];
         }
     }
+    NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"example1.mp4"] withExtension:nil];
+    [CoreDataManager.sharedManager addVideo:url withAngle:0 completion:^(Video * newVideo) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (newVideo == NULL) {
+                NSLog(@"保存失败");
+                return;
+            }
+            NSLog(@"save asset 成功 %@", newVideo.videoFile);
+        });
+    }];
 }
 + (BOOL)resultExistsWithId:(NSString*)videoId option:(NSUInteger)option {
     NSString *path;

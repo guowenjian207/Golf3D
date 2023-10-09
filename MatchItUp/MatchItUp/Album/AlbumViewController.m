@@ -63,28 +63,36 @@
     [self outletConfig];
     [self outletLayout];
     
-    //UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"查看功能文档" style:UIBarButtonItemStylePlain target:self action:@selector(viewFeatureDocumentation)];
-    //self.navigationItem.rightBarButtonItem = rightButton;
+    UIButton *help = [[UIButton alloc] init];
+    [help addTarget:self action:@selector(viewFeatureDocumentation) forControlEvents:UIControlEventTouchUpInside];
+    [help setImage:[UIImage imageNamed:@"star"] forState:UIControlStateNormal];
+    [topView addSubview:help];
+    
+    [help mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.width.mas_equalTo(30);
+        make.left.equalTo(topView).offset(10);
+        make.top.equalTo(topView);
+    }];
 }
 
 #pragma mark -- QLPreviewController
-//- (void)viewFeatureDocumentation {
-//    [self QLPreviewControllerLoad];
-//}
-//- (void)QLPreviewControllerLoad {
-//    QLPreviewController *qlpVC = [[QLPreviewController alloc] init];
-//    qlpVC.dataSource = self;
-//    [self presentViewController:qlpVC animated:YES completion:nil];
-//}
-//
-//- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
-//    return 1;//需要显示文件的个数
-//}
-//- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"MatchItUp-使用说明文档.docx" ofType:nil];
-//    NSURL *url = [NSURL fileURLWithPath:path];
-//    return url;
-//}
+- (void)viewFeatureDocumentation {
+    [self QLPreviewControllerLoad];
+}
+- (void)QLPreviewControllerLoad {
+    QLPreviewController *qlpVC = [[QLPreviewController alloc] init];
+    qlpVC.dataSource = self;
+    [self presentViewController:qlpVC animated:YES completion:nil];
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return 1;//需要显示文件的个数
+}
+- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"swing pro使用手册.pdf" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    return url;
+}
 
 /////////////////////////////////////////////////////////////////////
 - (void)viewWillAppear:(BOOL)animated {
