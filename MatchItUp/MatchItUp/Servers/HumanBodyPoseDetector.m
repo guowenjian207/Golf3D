@@ -368,6 +368,14 @@
     }
     double centerX = ((X[11] + X[12]) / 2 + X[0]) / 2;
     double centerY = ((Y[11] + Y[12]) / 2 + Y[0]) / 2;
+//    if (_isFront ? [self isFrontCompleteWithX:X Y:Y height:height centerX:centerX centerY:centerY] : [self isRightCompleteWithX:X Y:Y height:height centerX:centerX centerY:centerY]){
+//       countEnd++;
+//       if (countEnd>4){
+//           [self endAutoRecord];
+//       }
+//    }else{
+//       countEnd=0;
+//    }
     switch (_currentStage) {
         case Prepare:
             if (_isFront ? [self isFrontPrepareWithX:X Y:Y height:height centerX:centerX centerY:centerY] : [self isRightPrepareWithX:X Y:Y height:height centerX:centerX centerY:centerY]){

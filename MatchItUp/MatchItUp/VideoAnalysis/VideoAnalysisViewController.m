@@ -76,24 +76,27 @@
     [self.collectionView setContentOffset:CGPointMake(_currentIndex * self.view.frame.size.width, 0)];
     [self.view addSubview:self.indexcollectionView];
     
-    UIView *compareView = [[UIImageView alloc] init];
-    compareView.backgroundColor=[UIColor grayColor];
-    compareView.frame=CGRectMake(0,self.indexcollectionView.bottom,kScreenW,kScreenH/3);
-    [self.view addSubview:compareView];
-    UIImageView *imageviewA= [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
-    imageviewA.backgroundColor=[UIColor greenColor];
-    imageviewA.image = [UIImage imageNamed:@"addvideo"];
-    [compareView addSubview:imageviewA];
-    UIImageView *imageviewB= [[UIImageView alloc] initWithFrame:CGRectMake(compareView.frame.size.width/3+2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
-    imageviewB.backgroundColor=[UIColor greenColor];
-    imageviewB.image = [UIImage imageNamed:@"addvideo"];
-    [compareView addSubview:imageviewB];
-    UIImageView *imageviewC= [[UIImageView alloc] initWithFrame:CGRectMake(compareView.frame.size.width/3*2+2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
-    imageviewC.backgroundColor=[UIColor greenColor];
-    imageviewC.image = [UIImage imageNamed:@"addvideo"];
-    [compareView addSubview:imageviewC];
+//    UIView *compareView = [[UIImageView alloc] init];
+//    compareView.backgroundColor=[UIColor grayColor];
+//    compareView.frame=CGRectMake(0,self.indexcollectionView.bottom,kScreenW,kScreenH/3);
+//    [self.view addSubview:compareView];
+//    UIImageView *imageviewA= [[UIImageView alloc] initWithFrame:CGRectMake(2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
+//    imageviewA.backgroundColor=[UIColor greenColor];
+//    imageviewA.image = [UIImage imageNamed:@"addvideo"];
+//    [compareView addSubview:imageviewA];
+//    UIImageView *imageviewB= [[UIImageView alloc] initWithFrame:CGRectMake(compareView.frame.size.width/3+2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
+//    imageviewB.backgroundColor=[UIColor greenColor];
+//    imageviewB.image = [UIImage imageNamed:@"addvideo"];
+//    [compareView addSubview:imageviewB];
+//    UIImageView *imageviewC= [[UIImageView alloc] initWithFrame:CGRectMake(compareView.frame.size.width/3*2+2, 2, compareView.frame.size.width/3-4, compareView.frame.size.height - 4)];
+//    imageviewC.backgroundColor=[UIColor greenColor];
+//    imageviewC.image = [UIImage imageNamed:@"addvideo"];
+//    [compareView addSubview:imageviewC];
     self.bottomView.backgroundColor = [UIColor blackColor];
     self.bottomView.type = self.type;
+    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-100);
+    }];
     
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -373,7 +376,7 @@
 
 #pragma mark - bottom view delegate
 - (void)removeAsset{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             NSLog(@"点击了取消");
     }];
@@ -411,7 +414,7 @@
 }
 
 - (void)saveAsset{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             NSLog(@"点击了取消");
     }];
@@ -434,16 +437,13 @@
         }
         
         [CoreDataManager.sharedManager addVideo:asset.videoURL withAngle:0 startTime:start endTime:end andisFront:self->_isFront completion:^(Video * newVideo) {
-            (dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 if (newVideo == NULL) {
                     [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeText title:@"保存失败" icon:NULL autoHideAfterDelayIfNeed:@1];
                     return;
                 }
                 NSLog(@"save asset 成功 %@", newVideo.videoFile);
                 [ZHPopupViewManager.sharedManager showPromptViewWithSuperview:self.view mode:MBProgressHUDModeCustomView title:@"导入成功" icon:[UIImage imageNamed:@"complete"] autoHideAfterDelayIfNeed:@1];
-    //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //                [self.navigationController popViewControllerAnimated:YES];
-    //            });
             });
         }];
     }];

@@ -866,6 +866,38 @@
             endingLineNumber = "1211"
             landmarkName = "-panGestureRecognize:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7B5F7C59-0B03-47A2-BB54-932A412C1D55 - 354c7b3d04626a8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FramePlayerView panGestureRecognize:]"
+                  moduleName = "MatchItUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gwj/MatchItUp/MatchItUp/View/FramePlayerView/FramePlayerView.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1211"
+                  endingLineNumber = "1211"
+                  offsetFromSymbolStart = "4524">
+               </Location>
+               <Location
+                  uuid = "7B5F7C59-0B03-47A2-BB54-932A412C1D55 - 354c7b3d04626a8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FramePlayerView panGestureRecognize:]"
+                  moduleName = "MatchItUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gwj/MatchItUp/MatchItUp/View/FramePlayerView/FramePlayerView.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1211"
+                  endingLineNumber = "1211"
+                  offsetFromSymbolStart = "5876">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

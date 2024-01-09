@@ -802,7 +802,7 @@
         }
         if(isDetect){
             //NSLog(@"%@",_isAuto?@"自动录制":@"不自动");
-//            [self->humanDetector predict:sampleBuffer isAutoRecord:_isAuto];
+            [self->humanDetector predict:sampleBuffer isAutoRecord:_isAuto];
         }
     }else{
         indexOfHumanDetect++;
