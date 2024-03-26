@@ -153,7 +153,7 @@
 
 - (void)downLoadFramesIdxWithVideoId:(NSNumber *)videoId isFromInit:(BOOL)isFromInit{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:@"http://219.238.233.6:37577/progolf/keyframes" parameters:@{@"video_id" : videoId} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/keyframes" parameters:@{@"video_id" : videoId} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         if ([responseObject[@"status"] isEqual:@"success"]) {
             NSArray *frameList = responseObject[@"data"][@"framesList"];
@@ -190,7 +190,7 @@
     framesKey = frameskey;
     videoURLString = [[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"%@", framesKey]];
     
-    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"http://219.238.233.6:37577/progolf/linedata" parameters:@{@"businessType" : @1, @"videoId" : @-1, @"framesKey" : framesKey} error:nil];
+    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"http://s11.bupt.cc:37578/progolf/linedata" parameters:@{@"businessType" : @1, @"videoId" : @-1, @"framesKey" : framesKey} error:nil];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSString *tmpDir = NSTemporaryDirectory();

@@ -752,7 +752,7 @@
     hud.userInteractionEnabled= NO;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:@"http://219.238.233.6:37577/progolf/upload" parameters:@{@"type" : @0} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/upload" parameters:@{@"type" : @0} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                 [formData appendPartWithFileURL:self.videoURL name:@"file" error:nil];
         } progress:^(NSProgress * _Nonnull uploadProgress) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -841,7 +841,7 @@
 
 - (void)queryProgress {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:@"http://219.238.233.6:37577/progolf/key_frames_progress" parameters:@{@"video_id" : videoId} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/key_frames_progress" parameters:@{@"video_id" : videoId} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         if ([responseObject[@"status"] isEqual:@"success"]) {
             
@@ -912,7 +912,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSString *deviceToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
-    [manager POST:@"http://219.238.233.6:37577/progolf/predict" parameters:@{@"video_id" : videoId, @"deviceToken" : deviceToken} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/predict" parameters:@{@"video_id" : videoId, @"deviceToken" : deviceToken} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"111\r\n%@", responseObject);
             if ([responseObject[@"status"] isEqual:@"success"]) {
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayFrameSelectionResult) name:[NSString stringWithFormat:@"keyFramesPredictForVideo%@", self->videoId] object:nil];

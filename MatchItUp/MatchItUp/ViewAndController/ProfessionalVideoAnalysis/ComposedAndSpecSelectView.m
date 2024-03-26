@@ -1005,7 +1005,7 @@
 
 - (void)queryProgress {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:@"http://219.238.233.6:37577/progolf/auto_draw_line_progress" parameters:@{@"key" : framesKey} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/auto_draw_line_progress" parameters:@{@"key" : framesKey} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         if ([responseObject[@"status"] isEqual:@"success"]) {
             
@@ -1209,7 +1209,7 @@
     hud.userInteractionEnabled= NO;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:@"http://219.238.233.6:37577/progolf/upload" parameters:@{@"type" : @0} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/upload" parameters:@{@"type" : @0} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                 [formData appendPartWithFileURL:self.videoURL name:@"file" error:nil];
         } progress:^(NSProgress * _Nonnull uploadProgress) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -1292,7 +1292,7 @@
     NSString *filePath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[[[_videoURL relativeString] lastPathComponent] stringByDeletingPathExtension]];
     NSString *frameSavePath = [filePath stringByAppendingPathComponent:@"frameIndex"];
     NSMutableArray *frameDataArray = [NSMutableArray arrayWithContentsOfFile:frameSavePath];
-    [manager POST:@"http://219.238.233.6:37577/progolf/upload" parameters:@{@"type" : @1} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:@"http://s11.bupt.cc:37578/progolf/upload" parameters:@{@"type" : @1} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             for (int i = 0; i < 13; i++) {
                 [formData appendPartWithFileData:frameDataArray[i] name:@"file" fileName:[NSString stringWithFormat:@"%04d.jpg", i] mimeType:@"image/jpeg"];
             }
@@ -1469,7 +1469,7 @@
     NSLog(@"videoId====%@",videoId);
 //    manager.responseSerializer.acceptableContentTypes= [NSSet setWithObjects:@"text/plain",@"application/json", nil];
     if(videoId!=nil){
-        [manager POST:@"http://219.238.233.6:37577/progolf/autodrawlineandcurve/withpics" parameters:@{@"frames_key" : framesKey, @"deviceToken" : deviceToken, @"side":side, @"video_id" : videoId, @"frame_list" : mutStr} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [manager POST:@"http://s11.bupt.cc:37578/progolf/autodrawlineandcurve/withpics" parameters:@{@"frames_key" : framesKey, @"deviceToken" : deviceToken, @"side":side, @"video_id" : videoId, @"frame_list" : mutStr} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"%@", responseObject);
             if ([responseObject[@"status"] isEqual:@"success"]) {
     //            [self->hud hideAnimated:YES];
@@ -1525,7 +1525,7 @@
         }];
     }
 //        else{
-//        [manager POST:@"http://219.238.233.6:37577/progolf/autodrawline/withpics" parameters:@{@"frames_key" : framesKey, @"deviceToken" : deviceToken, @"side" : side} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        [manager POST:@"http://s11.bupt.cc:37578/progolf/autodrawline/withpics" parameters:@{@"frames_key" : framesKey, @"deviceToken" : deviceToken, @"side" : side} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //            NSLog(@"%@", responseObject);
 //            if ([responseObject[@"status"] isEqual:@"success"]) {
 //    //            [self->hud hideAnimated:YES];

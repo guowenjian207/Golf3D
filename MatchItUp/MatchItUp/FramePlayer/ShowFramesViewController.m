@@ -266,7 +266,7 @@
     NSString *stringParam = [self.selectedFramesIndex componentsJoinedByString:@","];
     
     if (hasUploaded) {
-        [manager POST:@"http://219.238.233.6:37578/upload/frames" parameters:@{@"frames":stringParam, @"md5":MD5Code} headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        [manager POST:@"http://s11.bupt.cc:37578/upload/frames" parameters:@{@"frames":stringParam, @"md5":MD5Code} headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self->hud.progress = uploadProgress.fractionCompleted;
             });
@@ -320,7 +320,7 @@
         return;
     }
     
-    [manager POST:@"http://219.238.233.6:37578/upload/file" parameters:@{@"frames":stringParam, @"md5":MD5Code} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [manager POST:@"http://s11.bupt.cc:37578/upload/file" parameters:@{@"frames":stringParam, @"md5":MD5Code} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                 [formData appendPartWithFileURL:self.videoUrl name:@"file" error:nil];
         } progress:^(NSProgress * _Nonnull uploadProgress) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -382,7 +382,7 @@
     MD5Code = [[NSFileManager md5HashOfPath:[_videoUrl path]] mutableCopy];
     [MD5Code appendString:@"."];
     [MD5Code appendString:[[_videoUrl path] pathExtension]];
-    [manager GET:@"http://219.238.233.6:37578/upload/isExist" parameters:@{@"fileName":MD5Code} headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:@"http://s11.bupt.cc:37578/upload/isExist" parameters:@{@"fileName":MD5Code} headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([responseObject[@"code"] intValue] == 200) {}

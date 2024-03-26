@@ -332,7 +332,7 @@ static NSInteger const kCoordCount = 36;
         [jsonData writeToFile:jsonPath atomically:YES];
         NSLog(@"%@",_jsonArray);
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        [manager POST:@"http://219.238.233.6:37577/progolf/upload_spec" parameters:@{@"uid":_cuurrentAsset.uuid} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [manager POST:@"http://s11.bupt.cc:37578/progolf/upload_spec" parameters:@{@"uid":_cuurrentAsset.uuid} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
             [formData appendPartWithFileData:jsonData name:@"file" fileName:@"jsonData.json" mimeType:@"json"];
             } progress:^(NSProgress * _Nonnull uploadProgress) {
                
