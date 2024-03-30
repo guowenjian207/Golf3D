@@ -141,7 +141,76 @@
             make.left.equalTo(self).offset(20);
             make.top.equalTo(self.topView.mas_bottom).offset(268);
         }];
+        UIColor *linesColor = [UIColor colorWithRed:1 green: 218.0/255 blue:55.0/255 alpha:1];
+        self.lable1 = [[UILabel alloc]init];
+        [self.lable1 setTextColor:linesColor];
+        [self addSubview:_lable1];
         
+        [self.lable1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(self.mas_height).multipliedBy(0.15);
+            make.height.mas_equalTo(self.mas_height).multipliedBy(0.1);
+            make.left.equalTo(self).offset(20);
+            make.top.equalTo(self.topView.mas_top).offset(20);
+        }];
+        
+        self.lable2 = [[UILabel alloc]init];
+        [self.lable2 setTextColor:linesColor];
+        [self addSubview:_lable2];
+        
+        [self.lable2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(self.lable1);
+            make.left.equalTo(self.lable1.mas_right).offset(10);
+            make.top.equalTo(self.lable1);
+        }];
+        
+        self.lable3 = [[UILabel alloc]init];
+        [self.lable3 setTextColor:linesColor];
+        [self addSubview:_lable3];
+        
+        [self.lable3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(self.lable1);
+            make.left.equalTo(self.lable2.mas_right).offset(10);
+            make.top.equalTo(self.lable2);
+        }];
+        
+        self.lable4 = [[UILabel alloc]init];
+        [self.lable4 setTextColor:linesColor];
+        [self addSubview:_lable4];
+        
+        [self.lable4 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(self.lable1);
+            make.left.equalTo(self.lable3.mas_right).offset(10);
+            make.top.equalTo(self.lable3);
+        }];
+        
+        self.lable5 = [[UILabel alloc]init];
+        [self.lable5 setTextColor:linesColor];
+        [self addSubview:_lable5];
+        
+        [self.lable5 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(self.lable1);
+            make.left.equalTo(self.lable4.mas_right).offset(10);
+            make.top.equalTo(self.lable4);
+        }];
+        
+        [self.lable1 setHidden:YES];
+        [self.lable2 setHidden:YES];
+        [self.lable3 setHidden:YES];
+        [self.lable4 setHidden:YES];
+        [self.lable5 setHidden:YES];
+        
+        self.linesSwitch = [[UISwitch alloc]init];
+        [self.linesSwitch setOnTintColor:[UIColor greenColor]];
+        [self.linesSwitch setThumbTintColor:[UIColor whiteColor]];
+        self.linesSwitch.enabled = YES;
+        [self.linesSwitch addTarget:self action:@selector(switchChanged) forControlEvents:UIControlEventValueChanged];
+        [_topView addSubview:self.linesSwitch];
+        
+        [self.linesSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.mas_equalTo(30);
+            make.right.equalTo(_topView).offset(-23);
+            make.top.equalTo(_topView);
+        }];
         //slider
         self.slider = [[UISlider alloc] init];
         self.slider.minimumValue = 0;
@@ -149,17 +218,7 @@
         self.slider.maximumTrackTintColor = [UIColor grayColor];
         self.slider.continuous=YES;
         self.slider.thumbTintColor= [UIColor redColor];
-//        UIFont *font = [UIFont boldSystemFontOfSize:15];
-//        UIImage *image = [UIImage imageNamed:@"sliderThumb"];
-//        UIGraphicsBeginImageContext(CGSizeMake(40, 60));
-//        [image drawInRect:CGRectMake(0,20,20,20)];
-//        CGRect rect = CGRectMake(0, 0, 40, 10);
-//        [[UIColor whiteColor] set];
-//        [@"  0.0s" drawInRect:CGRectIntegral(rect) withFont:font];
-//        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-        
-//        [self.slider setThumbImage:newImage forState:UIControlStateNormal];
+
         [self addSubview:_slider];
         [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -181,6 +240,10 @@
         }];
     }
     return self;
+}
+
+-(void) switchChanged{
+    [self.delegate switchChanged];
 }
 
 -(void) previousFrame{

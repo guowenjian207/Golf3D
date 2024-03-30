@@ -24,12 +24,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *rotationlBtn;
 @property (nonatomic, strong) UIButton *settinglBtn;
 
+@property (nonatomic, strong) UISwitch *linesSwitch;
+@property (nonatomic, strong) UILabel *lable1;
+@property (nonatomic, strong) UILabel *lable2;
+@property (nonatomic, strong) UILabel *lable3;
+@property (nonatomic, strong) UILabel *lable4;
+@property (nonatomic, strong) UILabel *lable5;
+
 @property (nonatomic,strong)  UILabel *topLabel;
 - (instancetype)initWithFrame:(CGRect)frame;
 - (void)drawLine2with:(CGPoint)point;
 
 @end
 @protocol ModelPlayViewDelegate <NSObject>
+-(void)switchChanged;
 -(void)preFrame;
 -(void)nextFrame;
 -(void)playOrPause;

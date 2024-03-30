@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3222BECF7490C87A1F88D460 /* Pods_MatchItUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865E3876E067EF6FF148A11F /* Pods_MatchItUpTests.framework */; };
+		2A8D7440343D313EB213FE51 /* Pods_MatchItUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E194BD3DF4C0B1DD557E1E89 /* Pods_MatchItUp.framework */; };
+		4F9C380F312EF8C225820A5F /* Pods_MatchItUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78549FA6B4B12672A2916985 /* Pods_MatchItUpTests.framework */; };
+		692A8DE32BB7CC18002441A1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 692A8DE22BB7CC18002441A1 /* PrivacyInfo.xcprivacy */; };
 		B903223825B01E7900E405DE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B903223725B01E7900E405DE /* CoreDataManager.m */; };
 		B903223925B01E7900E405DE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B903223725B01E7900E405DE /* CoreDataManager.m */; };
 		B903223A25B01E7900E405DE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B903223725B01E7900E405DE /* CoreDataManager.m */; };
@@ -133,7 +135,6 @@
 		D65BF28C27E87935002B8A27 /* PlaneOutLine.plist in Resources */ = {isa = PBXBuildFile; fileRef = D65BF28B27E87935002B8A27 /* PlaneOutLine.plist */; };
 		D66154FC26F4C3BD0034EC25 /* FramePhotoZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = D66154FB26F4C3BD0034EC25 /* FramePhotoZoom.m */; };
 		D66154FF26F5D64E0034EC25 /* FrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D66154FD26F5D64E0034EC25 /* FrameCollectionViewCell.m */; };
-		D6782B51C7DCE1DDD397D22C /* Pods_MatchItUp_MatchItUpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBF0C09ED3F0A6A68679BFF /* Pods_MatchItUp_MatchItUpUITests.framework */; };
 		D67E351F27E18A92004065CC /* scoreTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D67E351E27E18A92004065CC /* scoreTool.m */; };
 		D67E352227E1998E004065CC /* scoreCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = D67E352127E1998E004065CC /* scoreCanvasView.m */; };
 		D684E4D1277B1139009F3232 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D684E4D0277B1139009F3232 /* HomeViewController.m */; };
@@ -200,7 +201,7 @@
 		E0FDB767292392870094F5A4 /* HomeScreenViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB766292392870094F5A4 /* HomeScreenViewController.mm */; };
 		E0FDB76A292392B00094F5A4 /* ShowFramesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB769292392B00094F5A4 /* ShowFramesViewController.m */; };
 		E0FDB8D22923B00A0094F5A4 /* MatchItUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB8D02923B00A0094F5A4 /* MatchItUp.xcdatamodeld */; };
-		F1D4298EA36652352991D739 /* Pods_MatchItUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0FF6E25EAE733432111AA3 /* Pods_MatchItUp.framework */; };
+		FEC69EAC42C3CB5D4FEFBBD4 /* Pods_MatchItUp_MatchItUpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D028B3D737E20BA3A7E34814 /* Pods_MatchItUp_MatchItUpUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,15 +222,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		025E8E1BE2B6905E6374D703 /* Pods-FrameCutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrameCutTests.release.xcconfig"; path = "Target Support Files/Pods-FrameCutTests/Pods-FrameCutTests.release.xcconfig"; sourceTree = "<group>"; };
-		1DFB68D29D8322B6429C152F /* Pods-MatchItUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUpTests.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUpTests/Pods-MatchItUpTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4313986CEE55CAC4CD52383A /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-MatchItUpUITests.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6CDF5E3BF77AA1DB4AA93F7E /* Pods-FrameCutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FrameCutTests.debug.xcconfig"; path = "Target Support Files/Pods-FrameCutTests/Pods-FrameCutTests.debug.xcconfig"; sourceTree = "<group>"; };
-		847FFBD23B7EA3736C4F65F7 /* Pods-MatchItUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUpTests.release.xcconfig"; path = "Target Support Files/Pods-MatchItUpTests/Pods-MatchItUpTests.release.xcconfig"; sourceTree = "<group>"; };
-		865E3876E067EF6FF148A11F /* Pods_MatchItUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9333686B274BD5EDA2C7C30B /* Pods-MatchItUp-FrameCutUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-FrameCutUITests.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUp-FrameCutUITests/Pods-MatchItUp-FrameCutUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		95AB70D3FB523744EAA0017B /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-MatchItUpUITests.release.xcconfig"; path = "Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9F9571B63436B13A0104709A /* Pods-MatchItUp-FrameCutUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-FrameCutUITests.release.xcconfig"; path = "Target Support Files/Pods-MatchItUp-FrameCutUITests/Pods-MatchItUp-FrameCutUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1586A3A61643C095E7152654 /* Pods-MatchItUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp.release.xcconfig"; path = "Target Support Files/Pods-MatchItUp/Pods-MatchItUp.release.xcconfig"; sourceTree = "<group>"; };
+		1DA10838783CC71A1C114C56 /* Pods-MatchItUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUp/Pods-MatchItUp.debug.xcconfig"; sourceTree = "<group>"; };
+		2AD766BA4B193F16BB55EBA8 /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-MatchItUpUITests.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		692A8DE22BB7CC18002441A1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		69FF5D862BB3D26600367657 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69FF5D882BB3D28300367657 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69FF5D8A2BB3D28D00367657 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78549FA6B4B12672A2916985 /* Pods_MatchItUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD21CACABB8A2228B03B9E6 /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp-MatchItUpUITests.release.xcconfig"; path = "Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests.release.xcconfig"; sourceTree = "<group>"; };
+		86BACB836F3F446B07EDB764 /* Pods-MatchItUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUpTests.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUpTests/Pods-MatchItUpTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B903223625B01E7900E405DE /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		B903223725B01E7900E405DE /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		B903224125B01E9F00E405DE /* AlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
@@ -328,6 +330,8 @@
 		B9CF0BB025A54B7900F4D7F1 /* HumanBodyPoseDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HumanBodyPoseDetector.m; sourceTree = "<group>"; };
 		B9D3BFC525B4719B00AD3120 /* PhotosVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosVideo.h; sourceTree = "<group>"; };
 		B9D3BFC625B4719B00AD3120 /* PhotosVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosVideo.m; sourceTree = "<group>"; };
+		CF2B7DD85F6402A040C9E95E /* Pods-MatchItUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUpTests.release.xcconfig"; path = "Target Support Files/Pods-MatchItUpTests/Pods-MatchItUpTests.release.xcconfig"; sourceTree = "<group>"; };
+		D028B3D737E20BA3A7E34814 /* Pods_MatchItUp_MatchItUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUp_MatchItUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6395026282BB9500073472F /* UIView+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Resize.m"; sourceTree = "<group>"; };
 		D6395027282BB9500073472F /* protractorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = protractorLayer.m; sourceTree = "<group>"; };
 		D6395028282BB9500073472F /* UIView+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Resize.h"; sourceTree = "<group>"; };
@@ -382,7 +386,6 @@
 		D6EDD8C4280EA1AA00E0395E /* autoRecordEnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = autoRecordEnd.mp3; sourceTree = "<group>"; };
 		D6FF240A2860C94F00C759A8 /* myUILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
 		D6FF240B2860C94F00C759A8 /* myUILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
-		DFBF0C09ED3F0A6A68679BFF /* Pods_MatchItUp_MatchItUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUp_MatchItUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00E1FB229252EA7003C751B /* CountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownView.m; sourceTree = "<group>"; };
 		E00E1FB329252EA7003C751B /* CountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownView.h; sourceTree = "<group>"; };
 		E02B0B5829C063A500F71006 /* SpecificationAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecificationAlbumViewController.h; sourceTree = "<group>"; };
@@ -434,7 +437,7 @@
 		E0CF06CB29ED0635002321F0 /* ComposedAndSpecSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposedAndSpecSelectView.h; sourceTree = "<group>"; };
 		E0CF06CC29ED0635002321F0 /* ComposedAndSpecSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposedAndSpecSelectView.m; sourceTree = "<group>"; };
 		E0CF0AC629AF5E3600C1CF82 /* ModelPlayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelPlayController.h; sourceTree = "<group>"; };
-		E0CF0AC729AF5E3600C1CF82 /* ModelPlayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelPlayController.m; sourceTree = "<group>"; };
+		E0CF0AC729AF5E3600C1CF82 /* ModelPlayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ModelPlayController.m; sourceTree = "<group>"; };
 		E0CF0AC929AF62B500C1CF82 /* ModelPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPlayView.m; sourceTree = "<group>"; };
 		E0CF0ACA29AF62B500C1CF82 /* ModelPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPlayView.h; sourceTree = "<group>"; };
 		E0CF0ACC29AF62E700C1CF82 /* GolferModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GolferModel.h; sourceTree = "<group>"; };
@@ -460,9 +463,7 @@
 		E0FDB768292392B00094F5A4 /* ShowFramesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFramesViewController.h; sourceTree = "<group>"; };
 		E0FDB769292392B00094F5A4 /* ShowFramesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFramesViewController.m; sourceTree = "<group>"; };
 		E0FDB8D12923B00A0094F5A4 /* MatchItUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchItUp.xcdatamodel; sourceTree = "<group>"; };
-		E1DC43C64990B5DEADA43E0A /* Pods-MatchItUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp.debug.xcconfig"; path = "Target Support Files/Pods-MatchItUp/Pods-MatchItUp.debug.xcconfig"; sourceTree = "<group>"; };
-		E8001442A7EE959C7719FF52 /* Pods-MatchItUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchItUp.release.xcconfig"; path = "Target Support Files/Pods-MatchItUp/Pods-MatchItUp.release.xcconfig"; sourceTree = "<group>"; };
-		EC0FF6E25EAE733432111AA3 /* Pods_MatchItUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E194BD3DF4C0B1DD557E1E89 /* Pods_MatchItUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchItUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,7 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0FB19612A0FDF3A006F2EC6 /* Accelerate.framework in Frameworks */,
-				F1D4298EA36652352991D739 /* Pods_MatchItUp.framework in Frameworks */,
+				2A8D7440343D313EB213FE51 /* Pods_MatchItUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +480,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3222BECF7490C87A1F88D460 /* Pods_MatchItUpTests.framework in Frameworks */,
+				4F9C380F312EF8C225820A5F /* Pods_MatchItUpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +488,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6782B51C7DCE1DDD397D22C /* Pods_MatchItUp_MatchItUpUITests.framework in Frameworks */,
+				FEC69EAC42C3CB5D4FEFBBD4 /* Pods_MatchItUp_MatchItUpUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +498,13 @@
 		44FF8249C8780B053AD4F951 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69FF5D8A2BB3D28D00367657 /* SSZipArchive.framework */,
+				69FF5D882BB3D28300367657 /* MBProgressHUD.framework */,
+				69FF5D862BB3D26600367657 /* AFNetworking.framework */,
 				E0FB19602A0FDF3A006F2EC6 /* Accelerate.framework */,
-				EC0FF6E25EAE733432111AA3 /* Pods_MatchItUp.framework */,
-				DFBF0C09ED3F0A6A68679BFF /* Pods_MatchItUp_MatchItUpUITests.framework */,
-				865E3876E067EF6FF148A11F /* Pods_MatchItUpTests.framework */,
+				E194BD3DF4C0B1DD557E1E89 /* Pods_MatchItUp.framework */,
+				D028B3D737E20BA3A7E34814 /* Pods_MatchItUp_MatchItUpUITests.framework */,
+				78549FA6B4B12672A2916985 /* Pods_MatchItUpTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -673,6 +677,7 @@
 		B938ABDA2595892100A7FF05 /* Supported */ = {
 			isa = PBXGroup;
 			children = (
+				692A8DE22BB7CC18002441A1 /* PrivacyInfo.xcprivacy */,
 				E0FDB73729238FAF0094F5A4 /* LaunchScreen.storyboard */,
 				D63B00F927CF18020031A86C /* Video+CoreDataProperties.h */,
 				D63B00FA27CF18020031A86C /* Video+CoreDataClass.h */,
@@ -1015,16 +1020,12 @@
 		FA0513D84118BB527391443F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1DC43C64990B5DEADA43E0A /* Pods-MatchItUp.debug.xcconfig */,
-				E8001442A7EE959C7719FF52 /* Pods-MatchItUp.release.xcconfig */,
-				9333686B274BD5EDA2C7C30B /* Pods-MatchItUp-FrameCutUITests.debug.xcconfig */,
-				9F9571B63436B13A0104709A /* Pods-MatchItUp-FrameCutUITests.release.xcconfig */,
-				6CDF5E3BF77AA1DB4AA93F7E /* Pods-FrameCutTests.debug.xcconfig */,
-				025E8E1BE2B6905E6374D703 /* Pods-FrameCutTests.release.xcconfig */,
-				4313986CEE55CAC4CD52383A /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */,
-				95AB70D3FB523744EAA0017B /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */,
-				1DFB68D29D8322B6429C152F /* Pods-MatchItUpTests.debug.xcconfig */,
-				847FFBD23B7EA3736C4F65F7 /* Pods-MatchItUpTests.release.xcconfig */,
+				1DA10838783CC71A1C114C56 /* Pods-MatchItUp.debug.xcconfig */,
+				1586A3A61643C095E7152654 /* Pods-MatchItUp.release.xcconfig */,
+				2AD766BA4B193F16BB55EBA8 /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */,
+				7AD21CACABB8A2228B03B9E6 /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */,
+				86BACB836F3F446B07EDB764 /* Pods-MatchItUpTests.debug.xcconfig */,
+				CF2B7DD85F6402A040C9E95E /* Pods-MatchItUpTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1036,11 +1037,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B938ABC7259588C600A7FF05 /* Build configuration list for PBXNativeTarget "MatchItUp" */;
 			buildPhases = (
-				57D23104C90A3D475E5D1607 /* [CP] Check Pods Manifest.lock */,
+				081C08575C7ADA81F468E48B /* [CP] Check Pods Manifest.lock */,
 				B938AB91259588C500A7FF05 /* Sources */,
 				B938AB92259588C500A7FF05 /* Frameworks */,
 				B938AB93259588C500A7FF05 /* Resources */,
-				B097CA13787D618AA3833A19 /* [CP] Embed Pods Frameworks */,
+				D74E3ED855D83F9BB9676EFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1055,7 +1056,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B938ABCA259588C600A7FF05 /* Build configuration list for PBXNativeTarget "MatchItUpTests" */;
 			buildPhases = (
-				D8602ED27A3AE11FC446EEB1 /* [CP] Check Pods Manifest.lock */,
+				10AC0BCA77A183AA7F13ED68 /* [CP] Check Pods Manifest.lock */,
 				B938ABAF259588C600A7FF05 /* Sources */,
 				B938ABB0259588C600A7FF05 /* Frameworks */,
 				B938ABB1259588C600A7FF05 /* Resources */,
@@ -1074,11 +1075,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B938ABCD259588C600A7FF05 /* Build configuration list for PBXNativeTarget "MatchItUpUITests" */;
 			buildPhases = (
-				8B21D13F6D100FEFED761A42 /* [CP] Check Pods Manifest.lock */,
+				251EBDA8F3A1D6950F650C39 /* [CP] Check Pods Manifest.lock */,
 				B938ABBA259588C600A7FF05 /* Sources */,
 				B938ABBB259588C600A7FF05 /* Frameworks */,
 				B938ABBC259588C600A7FF05 /* Resources */,
-				A783E4EF31D386A73A50A1CD /* [CP] Embed Pods Frameworks */,
+				FB4313C4157873461FE0306A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1150,6 +1151,7 @@
 				D6EDD8C5280EA1AA00E0395E /* autoRecordEnd.mp3 in Resources */,
 				D65BF28827E82E5A002B8A27 /* Adjust Line.plist in Resources */,
 				E0B6D4C22A3B5BA6009CF377 /* 3D界面背景B02.jpg in Resources */,
+				692A8DE32BB7CC18002441A1 /* PrivacyInfo.xcprivacy in Resources */,
 				D6AEFFA2286C4E22003F0D27 /* PostureOutLine Front.plist in Resources */,
 				E0CF0ED629AF64FF00C1CF82 /* oc in Resources */,
 				D65BF28A27E877D5002B8A27 /* PostureOutLine.plist in Resources */,
@@ -1179,7 +1181,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57D23104C90A3D475E5D1607 /* [CP] Check Pods Manifest.lock */ = {
+		081C08575C7ADA81F468E48B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1201,7 +1203,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8B21D13F6D100FEFED761A42 /* [CP] Check Pods Manifest.lock */ = {
+		10AC0BCA77A183AA7F13ED68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MatchItUpTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		251EBDA8F3A1D6950F650C39 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1223,24 +1247,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A783E4EF31D386A73A50A1CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B097CA13787D618AA3833A19 /* [CP] Embed Pods Frameworks */ = {
+		D74E3ED855D83F9BB9676EFB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1257,26 +1264,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchItUp/Pods-MatchItUp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8602ED27A3AE11FC446EEB1 /* [CP] Check Pods Manifest.lock */ = {
+		FB4313C4157873461FE0306A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MatchItUpTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchItUp-MatchItUpUITests/Pods-MatchItUp-MatchItUpUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1605,7 +1607,7 @@
 		};
 		B938ABC8259588C600A7FF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1DC43C64990B5DEADA43E0A /* Pods-MatchItUp.debug.xcconfig */;
+			baseConfigurationReference = 1DA10838783CC71A1C114C56 /* Pods-MatchItUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1660,7 +1662,7 @@
 		};
 		B938ABC9259588C600A7FF05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8001442A7EE959C7719FF52 /* Pods-MatchItUp.release.xcconfig */;
+			baseConfigurationReference = 1586A3A61643C095E7152654 /* Pods-MatchItUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1714,7 +1716,7 @@
 		};
 		B938ABCB259588C600A7FF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DFB68D29D8322B6429C152F /* Pods-MatchItUpTests.debug.xcconfig */;
+			baseConfigurationReference = 86BACB836F3F446B07EDB764 /* Pods-MatchItUpTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1735,7 +1737,7 @@
 		};
 		B938ABCC259588C600A7FF05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 847FFBD23B7EA3736C4F65F7 /* Pods-MatchItUpTests.release.xcconfig */;
+			baseConfigurationReference = CF2B7DD85F6402A040C9E95E /* Pods-MatchItUpTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1756,7 +1758,7 @@
 		};
 		B938ABCE259588C600A7FF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4313986CEE55CAC4CD52383A /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */;
+			baseConfigurationReference = 2AD766BA4B193F16BB55EBA8 /* Pods-MatchItUp-MatchItUpUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM3FDHAM9P;
@@ -1775,7 +1777,7 @@
 		};
 		B938ABCF259588C600A7FF05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95AB70D3FB523744EAA0017B /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */;
+			baseConfigurationReference = 7AD21CACABB8A2228B03B9E6 /* Pods-MatchItUp-MatchItUpUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM3FDHAM9P;

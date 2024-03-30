@@ -19,6 +19,7 @@ vector<vector<double>> Display(int frame);
 vector<vector<vector<double>>> Display2(int frame);
 vector<vector<vector<double>>> front_lines();
 vector<vector<vector<double>>> beside_lines();
+vector<vector<vector<double>>> new_lines();
 int getFrameCount( string path, string file_name);
 vector<int> getBodyCount();
 vector<int> getHeadCount();

@@ -17,14 +17,24 @@ typedef struct {
 typedef struct {
    MyVertex *myVertex;
 } AllVertex;
+
+typedef struct {
+    GLKVector3 positionCoodinate; // 顶点坐标
+    GLKVector3 colorCoodinate; // 顶点颜色
+} LineVertex;
+typedef struct {
+    LineVertex *myVertex;
+} NewVertex;
 @interface GolferModel : NSObject
 @property (nonatomic, assign) AllVertex *allVertex;
+@property (nonatomic, assign) NewVertex *newVertex;
 @property (nonatomic, assign) GLuint *indices;//
 @property (nonatomic, assign) NSInteger frames;
 @property (nonatomic, assign) bool *Isframes;
 @property (nonatomic, assign) NSInteger pointCount;
 @property (nonatomic, assign) NSInteger faceCount;
 @property (nonatomic, assign) float minfoot_y;
+@property (nonatomic, strong) NSMutableArray* linesAngle;
 
 @property (nonatomic, assign) GLKVector4 *headtop;
 @property (nonatomic, assign) GLKVector4 *_Nullable* _Nullable headposition;

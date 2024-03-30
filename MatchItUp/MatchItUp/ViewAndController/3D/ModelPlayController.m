@@ -14,7 +14,7 @@
 typedef struct {
     GLKVector3 positionCoord;   //顶点坐标
     GLKVector2 textureCoord;    //纹理坐标
-    GLKVector3 normal;          //法线
+//    GLKVector3 normal;          //法线
 } CCVertex;
 
 // 顶点数
@@ -44,7 +44,7 @@ static NSInteger const kCoordCount = 36;
 @property (nonatomic, strong) ModelPlayView* mp;
 @property (nonatomic, strong) GLKBaseEffect *baseEffect;
 @property (nonatomic, strong) GLKBaseEffect *effect;
-@property (nonatomic, strong) GLKBaseEffect *backhroundEffect;
+@property (nonatomic, strong) GLKBaseEffect *linewEffect;
 @property (strong, nonatomic) GLKSkyboxEffect *skyboxEffect;
 @property (nonatomic, strong) GLKTextureInfo *textureInfo;
 //@property (nonatomic, assign) GLKMatrix4 modelViewMatrix;
@@ -64,7 +64,7 @@ static NSInteger const kCoordCount = 36;
 @property (nonatomic, strong) UIPinchGestureRecognizer *_pinchGesture;  //缩放
 @property (nonatomic, strong) UIRotationGestureRecognizer *_rotationGesture; //旋转
 @property (nonatomic, assign) BOOL IsPlay;
-
+@property (nonatomic, assign) BOOL switchStatus;//开关控制newlines是否显示 默认 关闭
 
 @property (nonatomic, assign) CCVertex *vertices;
 @property (nonatomic, assign) GLuint vertexBuffer;
@@ -99,6 +99,10 @@ static NSInteger const kCoordCount = 36;
         glDeleteBuffers(1, &_bufferID);
         _bufferID = 0;
     }
+    if (_exbufferID) {
+        glDeleteBuffers(1, &_exbufferID);
+        _exbufferID = 0;
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -109,12 +113,14 @@ static NSInteger const kCoordCount = 36;
         for(int i=0;i<self.gl.frames;i++){
             if(self.gl.Isframes[i]){
                 free(self.gl.allVertex[i].myVertex);
+                free(self.gl.newVertex[i].myVertex);
             }
             else{
                 continue;
             }
         }
         free(self.gl.allVertex);
+        free(self.gl.newVertex);
         free(self.gl.Isframes);
         free(self.gl.indices);
         self.gl=nil;
@@ -156,6 +162,7 @@ static NSInteger const kCoordCount = 36;
     self.backgroundID=1;
     mvp=GLKMatrix4Identity;
     self.IsPlay = YES;
+    self.switchStatus = NO;
     self.view.backgroundColor = [UIColor orangeColor];
     
     self._panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(viewRotation:)];
@@ -186,6 +193,9 @@ static NSInteger const kCoordCount = 36;
     self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     glDepthRangef(1, 0);
     self.glkView.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+    self.glkView.multipleTouchEnabled = YES;
+    self.glkView.drawableMultisample = YES;
+    
     [self.view addSubview:self.glkView];
     _mp =[[ModelPlayView alloc]initWithFrame:frame];
     _mp.glkView=_glkView;
@@ -231,29 +241,27 @@ static NSInteger const kCoordCount = 36;
     
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(MyVertex), NULL + offsetof(MyVertex, texture));
-
+    
+//newlines
+    
+    glGenBuffers(1, &_exbufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, _exbufferID);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(LineVertex)*12, self.gl.newVertex[_frame].myVertex, GL_STATIC_DRAW);
+     
+    // 打开读取通道
+    glEnableVertexAttribArray(GLKVertexAttribPosition); // 顶点坐标数据
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(LineVertex, positionCoodinate));
+    
+    //顶点颜色
+//    glEnableVertexAttribArray(GLKVertexAttribColor);
+//    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/,NULL + offsetof(LineVertex, colorCoodinate));
 }
 // 配置纹理
 - (void)setupTexture{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mengpi4" ofType:@"jpg"];
+    self.linewEffect  = [[GLKBaseEffect alloc] init];
+    self.linewEffect.useConstantColor = YES;
+    self.linewEffect.constantColor = GLKVector4Make(255.0/255, 218.0/255, 55.0/255, 1.0); // 设置为红色
 
-     //初始化纹理
-//    NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft: @(1)}; // 纹理坐标原点是左下角,但是图片显示原点应该是左上角
-//    _textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
-//
-//    NSLog(@"textureInfo.name: %d", _textureInfo.name);
-    
-    
-//    self.exEffect =  [[GLKBaseEffect alloc] init];
-//
-//    self.exEffect.constantColor=GLKVector4Make(1, 1, 1, 1.0f);
-//    self.exEffect.light0.enabled = YES;
-//    self.exEffect.light0.ambientColor =GLKVector4Make(1, 1, 1, 1);
-//    self.exEffect.light0.specularColor=GLKVector4Make(1, 1, 1, 1);
-//    self.exEffect.light0.diffuseColor = GLKVector4Make(1, 1, 1, 1);// 开启漫反射
-//    self.exEffect.light0.position = GLKVector4Make(0.0f,-1.0f, 0.0f, 1);
-    
-    
     // 使用苹果`GLKit`提供的`GLKBaseEffect`完成着色器工作(顶点/片元)
     self.baseEffect = [[GLKBaseEffect alloc] init];
 //    self.baseEffect.texture2d0.enabled = GL_TRUE;
@@ -282,27 +290,6 @@ static NSInteger const kCoordCount = 36;
 //    self.baseEffect.light1.position = GLKVector4Make(0.5f, -0.0f,0.5f, 1); // 光源位置
     self.baseEffect.light2.position = GLKVector4Make(0, 1000, 0, 1);
 
-//    //铜
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.212500, 0.127500, 0.054000, 1.000000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.714000, 0.428400, 0.181440, 1.000000);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.393548, 0.271906, 0.166721, 1.000000);
-//    self.baseEffect.material.shininess= 25.600000;
-    //紫罗兰
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.110000, 0.060000, 0.090000, 1.000000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.430000, 0.470000, 0.540000, 1.000000);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.330000, 0.330000, 0.520000, 1.000000);
-//    self.baseEffect.material.shininess= 22.000000;
-    //银色
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.192250, 0.192250, 0.192250, 1.000000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.507540, 0.507540, 0.507540, 1.000000);
-//    self.baseEffect.material.specularColor=GLKVector4Make( 0.508273, 0.508273, 0.508273, 1.000000);
-//    self.baseEffect.material.shininess= 51.200001;
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.502250, 0.502250, 0.502250, 1.000000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.307540, 0.307540, 0.307540, 1.000000);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.308273, 0.308273, 0.308273, 1.000000);
-//    self.baseEffect.material.shininess= 51.200001;
-    
-//    self.baseEffect.material.colorMaterialEnabled = GL_TRUE;
     self.baseEffect.material.ambientColor = GLKVector4Make(0.5f, 0.5f, 0.5f, 1.0f);
     self.baseEffect.material.diffuseColor = GLKVector4Make(0.2f, 0.2f, 0.2f, 1.0f);
     self.baseEffect.material.specularColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.0f);
@@ -310,30 +297,7 @@ static NSInteger const kCoordCount = 36;
 
     // 设置反射强度
     self.baseEffect.material.shininess = 20.0f;
-    //珍珠
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.250000, 0.207250, 0.207250, 0.922000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(1.000000, 0.829000, 0.829000, 0.922000);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.296648, 0.296648, 0.296648, 0.922000);
-//    self.baseEffect.material.shininess= 11.264000;
-    //黑塑料
-//    self.baseEffect.material.ambientColor=GLKVector4Make(0.000000, 0.000000, 0.000000, 1.000000);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make( 0.010000, 0.010000, 0.010000, 1.000000);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.500000, 0.500000, 0.500000, 1.000000);
-//    self.baseEffect.material.shininess= 32.000000;
-    
-    
-//    self.baseEffect.material.ambientColor=GLKVector4Make( 0.1402, 0.1429 ,0.1429, 1);
-//    self.baseEffect.material.diffuseColor=GLKVector4Make(0.5, 0.5, 0.5, 1);
-//    self.baseEffect.material.specularColor=GLKVector4Make(0.1959, 0.1959, 0.1959, 1);
-//    self.baseEffect.material.shininess= 60;
-//
-    // 透视投影矩阵
-//    CGFloat aspect = fabs(self.glkView.bounds.size.width / self.glkView.bounds.size.height);
-//    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(60.0),aspect,0.2f, 0.5f);
-//    self.baseEffect.transform.projectionMatrix = projectionMatrix;
-    //正交投影矩阵
-//    GLKMatrix4 orthoMatrix = GLKMatrix4MakeOrtho(-4.0f, 4.0f, -4.0f, 4.0f, -4.0f, 4.0f);
-//    self.baseEffect.transform.projectionMatrix = orthoMatrix;
+
 }
 // 添加定时器
 - (void)addDisplayLink{
@@ -487,6 +451,7 @@ static NSInteger const kCoordCount = 36;
     modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, S_XYZ, S_XYZ, S_XYZ);
     modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, -ROC_X, -ROC_Y, -ROC_Z);
     self.baseEffect.transform.modelviewMatrix =modelViewMatrix;
+    self.linewEffect.transform.modelviewMatrix = modelViewMatrix;
 //    GLKMatrix4 modelMatrixInverse = GLKMatrix4Invert(modelViewMatrix, );
 //    GLKVector4 worldLightPosition = GLKMatrix4MultiplyVector4(modelMatrixInverse, self.baseEffect.light0.position);
 //    self.baseEffect.light0.position = worldLightPosition;
@@ -508,13 +473,13 @@ static NSInteger const kCoordCount = 36;
         orthoMatrix = GLKMatrix4MakeOrtho(-aspect, aspect, -1, 1, 0, 5);
     }
     self.baseEffect.transform.projectionMatrix = orthoMatrix;
-
+    self.linewEffect.transform.projectionMatrix = orthoMatrix;
 //    mvp=GLKMatrix4Multiply(orthoMatrix, modelViewMatrix);
     
-    self.skyboxEffect.center = self.eyePosition;
-    self.skyboxEffect.transform.projectionMatrix =GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0f),aspect,0.1f, 20.0f);
-    self.skyboxEffect.transform.modelviewMatrix = self.baseEffect.transform.modelviewMatrix;
-    
+//    self.skyboxEffect.center = self.eyePosition;
+//    self.skyboxEffect.transform.projectionMatrix =GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0f),aspect,0.1f, 20.0f);
+//    self.skyboxEffect.transform.modelviewMatrix = self.baseEffect.transform.modelviewMatrix;
+//    
     GLKMatrix4 modelViewMatrix2 = GLKMatrix4MakeLookAt(
                          self.eyePosition.x,
                          self.eyePosition.y,
@@ -539,14 +504,23 @@ static NSInteger const kCoordCount = 36;
     self.effect.transform.modelviewMatrix = modelViewMatrix2;
     // 重新渲染
     [self.glkView display];
+    
+    [self upadteNewLinesAngle];
 }
 
+-(void) upadteNewLinesAngle{
+    [_mp.lable1 setText: [NSString stringWithFormat:@"Sp:%.2f°",[self.gl.linesAngle[_frame][0] floatValue]]];
+    [_mp.lable2 setText: [NSString stringWithFormat:@"Sh:%.2f°",[self.gl.linesAngle[_frame][1] floatValue]]];
+    [_mp.lable3 setText: [NSString stringWithFormat:@"Hp:%.2f°",[self.gl.linesAngle[_frame][2] floatValue]]];
+    [_mp.lable4 setText: [NSString stringWithFormat:@"Kn:%.2f°",[self.gl.linesAngle[_frame][3] floatValue]]];
+    [_mp.lable5 setText: [NSString stringWithFormat:@"To:%.2f°",[self.gl.linesAngle[_frame][4] floatValue]]];
+}
 #pragma mark GLKViewDelegate
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     // 清除颜色缓冲区、深度缓冲区
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     //背景绘制
-//    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_DEPTH_TEST);
     glDepthMask(GL_FALSE);//开启会覆盖模型
     
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
@@ -560,33 +534,8 @@ static NSInteger const kCoordCount = 36;
         
         //4.绘图
     glDrawArrays(GL_TRIANGLES, 0,kCoordCount);
-//    glBindVertexArrayOES(0);
     
-    
-    //(2).绑定顶点缓存区.(明确作用)
-    glBindBuffer(GL_ARRAY_BUFFER, _backbufferID);
-
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat*)NULL + 0);
-
-    //纹理坐标数据
-    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat*)NULL + 3);
-//    glClear(GL_COLOR_BUFFER_BIT);
-
-    //2.准备绘制
-//    [self.backhroundEffect prepareToDraw];
-
-    //3.开始绘制
-//    glDrawArrays(GL_TRIANGLES, 0, 6);
-
-
-    //地板绘制
-
-    
-
     //模型绘制
-    
     glEnable(GL_DEPTH_TEST);
     glDepthMask(GL_TRUE);
     glBindBuffer(GL_ARRAY_BUFFER, _bufferID);
@@ -606,8 +555,38 @@ static NSInteger const kCoordCount = 36;
         glDrawArrays(GL_TRIANGLE_FAN, start, self.gl.indices[i]);
         start += self.gl.indices[i];
     }
+    
+    //newLines绘制
+    if(self.switchStatus){
+        glBindBuffer(GL_ARRAY_BUFFER, _exbufferID);
+        glEnableVertexAttribArray(GLKVertexAttribPosition); // 顶点坐标数据
+        glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(LineVertex, positionCoodinate));
+    //    glEnableVertexAttribArray(GLKVertexAttribColor);
+    //    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex), NULL+offsetof(LineVertex, colorCoodinate));
+        // 准备绘制
+        [self.linewEffect prepareToDraw];
+        glLineWidth(5.0f);
+        glDrawArrays(GL_LINES, 0,  10);
+    }
 }
 #pragma mark ModelPlayViewDelegate
+-(void)switchChanged{
+    self.switchStatus = !self.switchStatus;
+    if(self.switchStatus){
+        [self.mp.lable1 setHidden:NO];
+        [self.mp.lable2 setHidden:NO];
+        [self.mp.lable3 setHidden:NO];
+        [self.mp.lable4 setHidden:NO];
+        [self.mp.lable5 setHidden:NO];
+    }else{
+        [self.mp.lable1 setHidden:YES];
+        [self.mp.lable2 setHidden:YES];
+        [self.mp.lable3 setHidden:YES];
+        [self.mp.lable4 setHidden:YES];
+        [self.mp.lable5 setHidden:YES];
+    }
+}
+
 -(void)preFrame{
     _frame--;
     _frame%=self.gl.frames;
@@ -705,6 +684,7 @@ static NSInteger const kCoordCount = 36;
             }
         }
         free(self.gl.allVertex);
+        free(self.gl.newVertex);
         free(self.gl.Isframes);
         free(self.gl.indices);
         self.gl=nil;

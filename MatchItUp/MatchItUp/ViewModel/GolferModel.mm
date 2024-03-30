@@ -31,11 +31,16 @@ using namespace std;
     for(int i=0;i<count_array.size();i++){
         self.indices[i] = count_array[i];
     }
+    self.linesAngle = [NSMutableArray arrayWithCapacity:self.frames];
+    for(int i=0;i<self.frames;i++){
+        [self.linesAngle addObject:@""];
+    }
     NSLog(@"kaishi");
     //读入顶点
 
     
     self.allVertex = (AllVertex*)malloc(sizeof(AllVertex)*self.frames);
+    self.newVertex = (NewVertex*)malloc(sizeof(LineVertex)*self.frames);
     self.Isframes = static_cast<bool *>(malloc(sizeof(bool)*_frames));
     for(int i=0;i<_frames;i++){
         self.Isframes[i]=NO;
@@ -270,6 +275,39 @@ using namespace std;
             }
         }
     }
+    
+    pos = new_lines();
+    lineCount = pos.size();
+    self.newVertex[frame].myVertex = (LineVertex*)malloc(sizeof(MyVertex)*10);
+    int index = 0;
+    for (int j = 0; j < lineCount; j++) {
+        NSInteger pointCount = pos[j].size();
+        for(int i = 0; i < pointCount;i++){
+            if(j == 0){
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0,0,1);
+                self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
+            }else if (j == 1){
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
+            }else if (j == 2){
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
+            }else if (j == 3){
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
+            }else if (j == 4){
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
+            }
+        }
+    }
+    float a1 = angleBetweenSegmentAndHorizontal2(self.newVertex[frame].myVertex[0].positionCoodinate, self.newVertex[frame].myVertex[1].positionCoodinate);
+    float a2 = angleBetweenSegmentAndHorizontal(self.newVertex[frame].myVertex[2].positionCoodinate, self.newVertex[frame].myVertex[3].positionCoodinate);
+    float a3 = angleBetweenSegmentAndHorizontal(self.newVertex[frame].myVertex[4].positionCoodinate, self.newVertex[frame].myVertex[5].positionCoodinate);
+    float a4 = angleBetweenSegmentAndHorizontal(self.newVertex[frame].myVertex[6].positionCoodinate, self.newVertex[frame].myVertex[7].positionCoodinate);
+    float a5 = angleBetweenSegmentAndHorizontal(self.newVertex[frame].myVertex[8].positionCoodinate, self.newVertex[frame].myVertex[9].positionCoodinate);
+    NSArray* angles = [NSArray arrayWithObjects:@(a1), @(a2),@(a3),@(a4),@(a5),nil];
+    self.linesAngle[frame] = angles;
     vector<vector<vector<double>>>().swap(pos);
 }
 #pragma mark - 根据顶点求出法向量
@@ -290,6 +328,37 @@ NSArray *NSIntegerVectorToNSArrayOfNSIntegers(const std::vector<NSInteger>& vec)
         [result addObject:@(vec[i])];
     }
     return result;
+}
+
+float angleBetweenSegmentAndHorizontal(GLKVector3 p1, GLKVector3 p2) {
+    GLKVector3 vector = GLKVector3Make(p1.x-p2.x, p1.y-p2.y, p1.z-p2.z);
+    
+    float angle = atan(vector.y / sqrt(vector.x * vector.x + vector.z * vector.z));
+//    double angleDegrees = angleRadians * (180.0 / M_PI);
+//        
+//    // 如果向量的z分量小于0，调整角度
+//    if (vz < 0) {
+//        angleDegrees = 180.0 - angleDegrees;
+//    }
+    return angle * (180.0 / M_PI);;
+}
+float angleBetweenSegmentAndHorizontal2(GLKVector3 p1, GLKVector3 p2) {
+    GLKVector3 vector = GLKVector3Make(p1.x-p2.x, p1.y-p2.y, p1.z-p2.z);
+    float angle ;
+//    GLKVector3 vector = GLKVector3Make(p2.x-p1.x, p2.y-p1.y, p2.z-p1.z);
+//    float angle = acos(sqrt(vector.x * vector.x + vector.z * vector.z)/ sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z));
+    if(p1.x-p2.x>=0){
+        angle = acos(sqrt(vector.x * vector.x )/ sqrt(vector.x * vector.x + vector.y * vector.y));
+    }else{
+        angle = acos(-sqrt(vector.x * vector.x )/ sqrt(vector.x * vector.x + vector.y * vector.y));
+    }
+//    double angleDegrees = angleRadians * (180.0 / M_PI);
+//
+//    // 如果向量的z分量小于0，调整角度
+//    if (vz < 0) {
+//        angleDegrees = 180.0 - angleDegrees;
+//    }
+    return angle * (180.0 / M_PI);;
 }
 @end
 

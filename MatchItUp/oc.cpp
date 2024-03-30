@@ -780,7 +780,114 @@ vector<vector<double>> test_Lower_Body_Position_lcy(Bvh &bvhs){
 }
 
 
+vector<vector<double>> test_feet_width_new1(Bvh &bvhs){//toes来画
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> golf_head,golf_tail;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_left_toes" && part->name != "h_right_toes"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_left_toes"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_right_toes"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    double fac1 = 1;
+    double fac2 = 1;
+    golf_tail.push_back(x1 + fac1*(x1 - x2));
+    golf_tail.push_back(y1 + fac1*(y1 - y2));
+    golf_tail.push_back(z1 + fac1*(z1 - z2));
+    golf_head.push_back(x2 + fac2*(x2 - x1));
+    golf_head.push_back(y2 + fac2*(y2 - y1));
+    golf_head.push_back(z2 + fac2*(z2 - z1));
 
+
+    vector<vector<double>> shaft_line_result;
+    shaft_line_result.push_back(golf_tail);
+    shaft_line_result.push_back(golf_head);
+    
+    return shaft_line_result;
+}
+
+vector<vector<double>> test_feet_width_new2(Bvh &bvhs){//foot来画
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> golf_head,golf_tail;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_left_foot" && part->name != "h_right_foot"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_left_foot"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_right_foot"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    golf_tail.push_back(x1);
+    golf_tail.push_back(y1);
+    golf_tail.push_back(z1);
+    golf_head.push_back(x2);
+    golf_head.push_back(y2);
+    golf_head.push_back(z2);
+
+    vector<vector<double>> shaft_line_result;
+    shaft_line_result.push_back(golf_tail);
+    shaft_line_result.push_back(golf_head);
+    
+    return shaft_line_result;
+}
 
 vector<vector<double>> test_feet_width(Bvh &bvhs){
     std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
@@ -889,6 +996,116 @@ vector<vector<double>> test_shoulder_angle_lcy(Bvh &bvhs){
     r_shoulder.push_back(x2 + 0*(x2 - x1));
     r_shoulder.push_back(y2 + 0*(y2 - y1));
     r_shoulder.push_back(z2 + 0*(z2 - z1));
+//    head_line[0] -= 50;
+    vector<vector<double>> shoulder_result;
+    shoulder_result.push_back(l_shoulder);
+    shoulder_result.push_back(r_shoulder);
+    return shoulder_result;
+}
+
+vector<vector<double>> test_shoulder_angle_lcy_new(Bvh &bvhs){
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> l_shoulder,r_shoulder;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_left_up_arm" && part->name != "h_right_up_arm"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_left_up_arm"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_right_up_arm"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    //可以调整
+    double fac1 = 1.5;
+    double fac2 = 1.5;
+    l_shoulder.push_back(x1 + fac1*(x1 - x2));
+    l_shoulder.push_back(y1 + fac1*(y1 - y2));
+    l_shoulder.push_back(z1 + fac1*(z1 - z2));
+    r_shoulder.push_back(x2 + fac2*(x2 - x1));
+    r_shoulder.push_back(y2 + fac2*(y2 - y1));
+    r_shoulder.push_back(z2 + fac2*(z2 - z1));
+//    head_line[0] -= 50;
+    vector<vector<double>> shoulder_result;
+    shoulder_result.push_back(l_shoulder);
+    shoulder_result.push_back(r_shoulder);
+    return shoulder_result;
+}
+
+vector<vector<double>> test_spine_tilt_lcy_new(Bvh &bvhs){//
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> l_shoulder,r_shoulder;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_torso_3" && part->name != "h_neck_1"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_torso_3"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_neck_1"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    //1.5和2可以改
+    double fac1 = 2;
+    double fac2 = 2;
+    l_shoulder.push_back(x1 + fac1*(x1 - x2));
+    l_shoulder.push_back(y1 + fac1*(y1 - y2));
+    l_shoulder.push_back(z1 + fac1*(z1 - z2));
+    r_shoulder.push_back(x2 + fac2*(x2 - x1));
+    r_shoulder.push_back(y2 + fac2*(y2 - y1));
+    r_shoulder.push_back(z2 + fac2*(z2 - z1));
 //    head_line[0] -= 50;
     vector<vector<double>> shoulder_result;
     shoulder_result.push_back(l_shoulder);
@@ -1061,6 +1278,120 @@ vector<vector<double>> test_knee_width(Bvh &bvhs){
     golf_tail[1] -= 16;
     shaft_line_result.push_back(golf_head);
     shaft_line_result.push_back(golf_tail);
+    
+    return shaft_line_result;
+}
+
+vector<vector<double>> test_knee_width_new(Bvh &bvhs){
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> golf_head,golf_tail;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_left_low_leg" && part->name != "h_right_low_leg"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_left_low_leg"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_right_low_leg"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    //可以调整
+    double fac1 = 1.5;
+    double fac2 = 1.5;
+    golf_tail.push_back(x1 + fac1*(x1 - x2));
+    golf_tail.push_back(y1 + fac1*(y1 - y2));
+    golf_tail.push_back(z1 + fac1*(z1 - z2));
+    golf_head.push_back(x2 + fac2*(x2 - x1));
+    golf_head.push_back(y2 + fac2*(y2 - y1));
+    golf_head.push_back(z2 + fac2*(z2 - z1));
+
+    vector<vector<double>> shaft_line_result;
+    shaft_line_result.push_back(golf_tail);
+    shaft_line_result.push_back(golf_head);
+
+    
+    return shaft_line_result;
+}
+
+vector<vector<double>> test_hip_width_new(Bvh &bvhs){
+    std::vector<std::string> visionOrder = getPre3dOrder();  //节点列表顺序 要写三种！
+    //按照关节顺序依次画(由getPre3dOrder()定义顺序)
+    translation = getClubTranslation();
+    
+    vector<double> golf_head,golf_tail;
+    double x1 = 0;
+    double y1 = 0;
+    double z1 = 0;
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+    
+    
+    for (unsigned int i=0 ; i< visionOrder.size();i++)
+    {
+        //遍历vision数组,其中是不同的关节
+        BvhPart *part;
+        part = bvhs.getBvhPart(visionOrder[i]);
+        cout<< part->name <<endl;
+        if(part->name != "h_left_up_leg" && part->name != "h_right_up_leg"){ // 画啥用啥
+            continue;
+        }
+        else{
+            Matrix4x3 m = part->gmotion[fr];
+            if(part->name == "h_left_up_leg"){
+                x1 = m.tx;
+                y1 = m.ty;
+                z1 = m.tz;
+            }
+            else if(part->name == "h_right_up_leg"){
+                x2 = m.tx;
+                y2 = m.ty;
+                z2 = m.tz;
+            }
+        }
+        
+        
+    }
+    //可以调整
+    double fac1 = 2.3;
+    double fac2 = 2.3;
+    golf_tail.push_back(x1 + fac1*(x1 - x2));
+    golf_tail.push_back(y1 + fac1*(y1 - y2));
+    golf_tail.push_back(z1 + fac1*(z1 - z2));
+    golf_head.push_back(x2 + fac2*(x2 - x1));
+    golf_head.push_back(y2 + fac2*(y2 - y1));
+    golf_head.push_back(z2 + fac2*(z2 - z1));
+
+    vector<vector<double>> shaft_line_result;
+    shaft_line_result.push_back(golf_tail);
+    shaft_line_result.push_back(golf_head);
+
     
     return shaft_line_result;
 }
@@ -2990,6 +3321,21 @@ vector<vector<vector<double>>> beside_lines(){
     result.push_back(test_knee_width_beside(bvhs));// 4个点 左上-右上-右下-左下
     result.push_back(test_elbow_line_lcy_beside(bvhs));// 2个点 右肩-右肘
     
+    return result;
+}
+
+vector<vector<vector<double>>> new_lines(){
+    
+    vector<int> key_frame = test_key_frames(cur_player);
+   
+    vector<vector<vector<double>>> result;
+
+    result.push_back(test_spine_tilt_lcy_new(bvhs)); // 2个点
+    result.push_back(test_shoulder_angle_lcy_new(bvhs)); // 2个点
+    result.push_back(test_hip_width_new(bvhs));// 2个点
+    result.push_back(test_knee_width_new(bvhs)); // 2个点
+    result.push_back(test_feet_width_new1(bvhs)); // 2个点
+
     return result;
 }
 
