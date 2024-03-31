@@ -141,9 +141,8 @@
             make.left.equalTo(self).offset(20);
             make.top.equalTo(self.topView.mas_bottom).offset(268);
         }];
-        UIColor *linesColor = [UIColor colorWithRed:1 green: 218.0/255 blue:55.0/255 alpha:1];
+        
         self.lable1 = [[UILabel alloc]init];
-        [self.lable1 setTextColor:linesColor];
         [self addSubview:_lable1];
         
         [self.lable1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -154,7 +153,6 @@
         }];
         
         self.lable2 = [[UILabel alloc]init];
-        [self.lable2 setTextColor:linesColor];
         [self addSubview:_lable2];
         
         [self.lable2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -164,7 +162,6 @@
         }];
         
         self.lable3 = [[UILabel alloc]init];
-        [self.lable3 setTextColor:linesColor];
         [self addSubview:_lable3];
         
         [self.lable3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -174,7 +171,6 @@
         }];
         
         self.lable4 = [[UILabel alloc]init];
-        [self.lable4 setTextColor:linesColor];
         [self addSubview:_lable4];
         
         [self.lable4 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -184,7 +180,6 @@
         }];
         
         self.lable5 = [[UILabel alloc]init];
-        [self.lable5 setTextColor:linesColor];
         [self addSubview:_lable5];
         
         [self.lable5 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,11 +188,23 @@
             make.top.equalTo(self.lable4);
         }];
         
-        [self.lable1 setHidden:YES];
-        [self.lable2 setHidden:YES];
-        [self.lable3 setHidden:YES];
-        [self.lable4 setHidden:YES];
-        [self.lable5 setHidden:YES];
+        UIColor *linesColor1 = [UIColor colorWithRed:0 green:172  blue:212 alpha:1];
+        UIColor *linesColor2 = [UIColor colorWithRed:128 green:0 blue:0 alpha:1];
+        UIColor *linesColor3 = [UIColor colorWithRed:0 green:128 blue:0 alpha:1];
+        UIColor *linesColor4 = [UIColor colorWithRed:128 green: 0 blue:128 alpha:1];
+        UIColor *linesColor5 = [UIColor colorWithRed:1 green: 218.0/255 blue:55.0/255 alpha:1];
+        
+        [self.lable1 setTextColor:linesColor1];
+        [self.lable2 setTextColor:linesColor2];
+        [self.lable3 setTextColor:linesColor3];
+        [self.lable4 setTextColor:linesColor4];
+        [self.lable5 setTextColor:linesColor5];
+        
+        [self.lable1 setHidden:NO];
+        [self.lable2 setHidden:NO];
+        [self.lable3 setHidden:NO];
+        [self.lable4 setHidden:NO];
+        [self.lable5 setHidden:NO];
         
         self.linesSwitch = [[UISwitch alloc]init];
         [self.linesSwitch setOnTintColor:[UIColor greenColor]];

@@ -14,9 +14,9 @@
             filePath = "MatchItUp/MatchItUp/ViewAndController/3D/ModelPlayController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
-            landmarkName = "-glkView:drawInRect:"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
+            landmarkName = "-switchChanged"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -91,6 +91,10 @@ static NSInteger const kCoordCount = 36;
         _backbufferID = 0;
 
     }
+    if (_exbufferID) {
+        glDeleteBuffers(1, &_exbufferID);
+        _exbufferID = 0;
+    }
     [self.displayLink invalidate];
 }
 - (void)cleanup{
@@ -162,7 +166,7 @@ static NSInteger const kCoordCount = 36;
     self.backgroundID=1;
     mvp=GLKMatrix4Identity;
     self.IsPlay = YES;
-    self.switchStatus = NO;
+    self.switchStatus = YES;
     self.view.backgroundColor = [UIColor orangeColor];
     
     self._panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(viewRotation:)];
@@ -220,7 +224,6 @@ static NSInteger const kCoordCount = 36;
     }
     NSLog(@"%ld",(long)_frame);
     glGenBuffers(1, &_bufferID); // 开辟1个顶点缓冲区，所以传入1
-    //NSLog(@"bufferID:%d", _bufferID);
     // 绑定顶点缓冲区
     glBindBuffer(GL_ARRAY_BUFFER, _bufferID);
     // 缓冲区大小
@@ -231,10 +234,6 @@ static NSInteger const kCoordCount = 36;
     // 打开读取通道
     glEnableVertexAttribArray(GLKVertexAttribPosition); // 顶点坐标数据
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(MyVertex, positionCoodinate));
-    
-    //顶点颜色
-//    glEnableVertexAttribArray(GLKVertexAttribColor);
-//    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex)/*由于是结构体，所以步长就是结构体大小*/,NULL + offsetof(MyVertex, colorCoodinate));
     //    光照
     glEnableVertexAttribArray(GLKVertexAttribNormal);
     glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), NULL+offsetof(MyVertex, normal));
@@ -246,21 +245,21 @@ static NSInteger const kCoordCount = 36;
     
     glGenBuffers(1, &_exbufferID);
     glBindBuffer(GL_ARRAY_BUFFER, _exbufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(LineVertex)*12, self.gl.newVertex[_frame].myVertex, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(LineVertex)*12, self.gl.newVertex[_frame].myVertex, GL_STREAM_DRAW);
      
     // 打开读取通道
     glEnableVertexAttribArray(GLKVertexAttribPosition); // 顶点坐标数据
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(LineVertex, positionCoodinate));
-    
     //顶点颜色
-//    glEnableVertexAttribArray(GLKVertexAttribColor);
-//    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/,NULL + offsetof(LineVertex, colorCoodinate));
+    glEnableVertexAttribArray(GLKVertexAttribColor);
+    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/,NULL + offsetof(LineVertex, colorCoodinate));
 }
 // 配置纹理
 - (void)setupTexture{
     self.linewEffect  = [[GLKBaseEffect alloc] init];
-    self.linewEffect.useConstantColor = YES;
-    self.linewEffect.constantColor = GLKVector4Make(255.0/255, 218.0/255, 55.0/255, 1.0); // 设置为红色
+    self.linewEffect.texture2d0.enabled = NO;
+//    self.linewEffect.useConstantColor = YES;
+//    self.linewEffect.constantColor = GLKVector4Make(255.0/255, 218.0/255, 55.0/255, 1.0); 
 
     // 使用苹果`GLKit`提供的`GLKBaseEffect`完成着色器工作(顶点/片元)
     self.baseEffect = [[GLKBaseEffect alloc] init];
@@ -526,7 +525,7 @@ static NSInteger const kCoordCount = 36;
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(CCVertex), NULL + offsetof(CCVertex, positionCoord));
-    
+    glDisableVertexAttribArray(GLKVertexAttribColor);
     //纹理数据
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(CCVertex), NULL + offsetof(CCVertex, textureCoord));
@@ -558,13 +557,14 @@ static NSInteger const kCoordCount = 36;
     
     //newLines绘制
     if(self.switchStatus){
+        [self.linewEffect prepareToDraw];
         glBindBuffer(GL_ARRAY_BUFFER, _exbufferID);
         glEnableVertexAttribArray(GLKVertexAttribPosition); // 顶点坐标数据
         glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex)/*由于是结构体，所以步长就是结构体大小*/, NULL + offsetof(LineVertex, positionCoodinate));
-    //    glEnableVertexAttribArray(GLKVertexAttribColor);
-    //    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex), NULL+offsetof(LineVertex, colorCoodinate));
+        glEnableVertexAttribArray(GLKVertexAttribColor);
+        glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE, sizeof(LineVertex), NULL+offsetof(LineVertex, colorCoodinate));
         // 准备绘制
-        [self.linewEffect prepareToDraw];
+        
         glLineWidth(5.0f);
         glDrawArrays(GL_LINES, 0,  10);
     }

@@ -284,19 +284,19 @@ using namespace std;
         NSInteger pointCount = pos[j].size();
         for(int i = 0; i < pointCount;i++){
             if(j == 0){
-                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0,0,1);
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 172, 212);
                 self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
             }else if (j == 1){
-                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(128,0,0);
                 self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
             }else if (j == 2){
-                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0,128,0);
                 self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
             }else if (j == 3){
-                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(128,0,128);
                 self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
             }else if (j == 4){
-                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(0, 0,1);
+                self.newVertex[frame].myVertex[index].colorCoodinate = GLKVector3Make(255.0/255, 218.0/255, 55.0/255);
                 self.newVertex[frame].myVertex[index++].positionCoodinate = GLKVector3Make(pos[j][i][0] / 100, pos[j][i][1] / 100, -pos[j][i][2] / 100);
             }
         }
