@@ -210,6 +210,7 @@
         [self.linesSwitch setOnTintColor:[UIColor greenColor]];
         [self.linesSwitch setThumbTintColor:[UIColor whiteColor]];
         self.linesSwitch.enabled = YES;
+        [self.linesSwitch setOn:YES];
         [self.linesSwitch addTarget:self action:@selector(switchChanged) forControlEvents:UIControlEventValueChanged];
         [_topView addSubview:self.linesSwitch];
         
