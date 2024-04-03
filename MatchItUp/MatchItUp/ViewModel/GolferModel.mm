@@ -333,7 +333,7 @@ NSArray *NSIntegerVectorToNSArrayOfNSIntegers(const std::vector<NSInteger>& vec)
 float angleBetweenSegmentAndHorizontal(GLKVector3 p1, GLKVector3 p2) {
     GLKVector3 vector = GLKVector3Make(p1.x-p2.x, p1.y-p2.y, p1.z-p2.z);
     
-    float angle = atan(vector.y / sqrt(vector.x * vector.x + vector.z * vector.z));
+    float angle = atan(vector.y /vector.x);
 //    double angleDegrees = angleRadians * (180.0 / M_PI);
 //        
 //    // 如果向量的z分量小于0，调整角度
